@@ -1,0 +1,124 @@
+
+/**
+ 	* @author 李珠刚
+ 	* 移动端Web登录页面
+ */
+body {
+	background: #fff;
+}
+
+.app-navbar {
+	position: relative;
+	height: 44px;
+	border-bottom: 1px solid #E5E5E5;
+	background: #fff;
+	text-align: center;
+	width: 100%;
+}
+
+.app-navbar .short-text {
+	display: inline-block;
+	*display: block;
+	font-size: 18px;
+	margin-top: 10px;
+	max-width: 180px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.go-back {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	background: url(/static/img/back.png) no-repeat 0px 0px;
+	background-size: 16px;
+	width: 30px;
+	height: 30px;
+}
+
+.go-register {
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	color: #333;
+	text-decoration: none;
+	display: inline-block;
+	float: right;
+	font-size: 16px;
+}
+
+.login-form {
+	margin: 60px auto 0;
+	width: 280px;
+}
+
+.phone-number, .user-password {
+	display: block;
+	margin: 0 auto;
+	padding-left: 35px;
+	width: 240px;
+	margin-top: 20px;
+}
+
+.phone-number {
+	background: #fff url(/static/img/login/user_head.png) 8px 8px no-repeat;
+	background-size: 18px;
+}
+
+.phone-number:focus {
+	background: #fff url(/static/img/login/user_head_focus.png) 8px 8px
+		no-repeat;
+	background-size: 18px;
+}
+
+.user-password {
+	background: #fff url(/static/img/modify/lock_icon.png) 8px 8px no-repeat;
+	background-size: 18px;
+}
+
+.user-password:focus {
+	background: #fff url(/static/img/modify/lock_icon_focus.png) 8px 8px
+		no-repeat;
+	background-size: 18px;
+}
+
+.get-login-box {
+	margin-top: 35px;
+}
+
+.get-login {
+	display: block;
+	width: 255px;
+	padding: 8px 14px;
+}
+
+/**第三方登录**/
+.sns-login-wrap {
+	border-top: 1px solid #ccc;
+	padding-top: 5px;
+	margin-top: 21px;
+}
+
+.sns-login-wrap label {
+	display: block;
+	float: left;
+	margin-top: 10px;
+}
+
+.sns-login-icon-wrap {
+	display: block;
+	float: left;
+	width: 165px;
+	margin-left: 10px;
+	text-align: left;
+}
+
+.sina-login-icon {
+	display: inline-block;
+	margin: 7px 10px;
+	width: 24px;
+	height: 24px;
+	background: url(/static/img/sns/login_icon_weibo.png) 0 0 no-repeat;
+	background-size: 22px;
+}

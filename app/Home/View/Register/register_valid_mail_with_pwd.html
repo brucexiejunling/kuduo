@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: microsoft yahei;
+		font-size: 14px;
+		border-left: 1px solid #ededed;
+		border-right: 1px solid #ededed;
+	}
+
+	.header-wrap {
+		border-top: 10px solid #DDD;
+		padding-top: 10px;
+	}
+	
+	.header-title {
+		background: #5bc0de;
+		color: #fff;
+		padding: 3px;
+		font-family: microsoft yahei;
+	}
+	
+	.logo {
+		display: block;
+		float: left;
+		margin-left: 10px;
+	}
+	
+	.menu-list {
+		list-style: none;
+		text-align: right;
+		padding: 20px 20px;
+		margin: 0;
+		float: right;
+	}
+
+	.menu-list > li {
+		display: inline;	
+	}
+	
+	.menu-list > li > a {
+		text-decoration: none;
+		font-family: microsoft yahei;
+		color: #0CF;
+		font-size: 14px;
+		padding: 0 10px;
+		border-right: 1px solid #5bc0de;
+	}
+	
+	.menu-list > li > a:hover {
+		text-decoration: underline;
+	}
+	
+	.clearfix {
+		height: 0;
+		clear: both;
+		width: 0;
+	}
+	
+ 	.menu-list > li > .lost-tie {
+		color: red;
+	}
+	
+	.custom-tips {
+		margin-top: 36px;
+	font-size: 16px;
+	color: #686868;
+	border-top: 1px solid #ddd;
+	padding-top: 27px;
+	}
+	
+	.verify-btn {
+		text-decoration: none;
+		padding: 10px 20px;
+		width: 94px;
+		text-align: center;
+		display: block;
+		border: 1px solid #0CF;
+		background: #0cf;
+		border-radius: 5px;
+		color: #fff;
+		margin: 20px 0;
+	}
+	
+	.verify-link {
+		color: #0CF;
+		text-decoration: none;
+		display: inline-block;
+		padding: 10px 0;
+	}
+	
+	.email-bottom {
+		background: #ededed;
+		margin-top: 50px;
+		padding: 10px 20px 23px;
+		color: #777;
+		font-size: 13px;
+		font-family: normal;
+		text-align: center;
+	}
+	
+	.team-name {
+		margin-top: 40px;
+		display: block;
+	}
+	
+	.main-content {
+		padding: 0 20px;
+	}
+	
+	.kf-email {
+		color: #008DEE;
+		text-decoration: none;
+		margin-left: 5px;
+	}
+	.kf-qq {
+		margin-left: 20px;
+	}
+
+	.wechat-icon {
+		width: 100px;
+		vertical-align: middle;
+		margin-left: 44px;
+	}
+
+	.quick-password {
+		margin-top: 23px;
+		font-size: 15px;
+	}
+
+	.quick-password > strong {
+
+	}
+</style>
+</head>
+<body>
+	<div class="header-wrap">
+		<a class="logo" target="_blank" href="{:C('DOMAIN_NAME')}">
+			<img src="http://www.ikuduo.com/static/img/logo.png" />
+		</a>
+		<ul class="menu-list">
+		</ul>
+		<div class="clearfix"></div>
+	</div>
+	<div class="header-title"></div>
+	<div class="main-content">
+		<div class="quick-password">您快速注册的系统初始密码为： <strong>{$password}</strong></div>
+		<p style="color: #F64848;">请尽快进入您的用户中心修改密码</p>
+		<div class="custom-tips">请点击下面按钮验证你的电子邮箱</div>
+		<a class="verify-btn" href="{:C('DOMAIN_NAME')}user/verify?code={$code}">验证电子邮箱</a>
+		<div>如果无法通过上面的按钮验证邮箱，请点击下面链接或将该网址复制并粘贴到浏览器地址栏</div>
+		<a class="verify-link" href="{:C('DOMAIN_NAME')}user/verify?code={$code}">{:C('DOMAIN_NAME')}user/verify?code={$code}</a>
+		<strong class="team-name">酷多二维码团队</strong>
+	</div>
+	<div class="email-bottom">
+		<p>如果您并没有使用当前Email进行注册，则不必理会这封邮件。</p>
+		<p>有任何问题，请及时联系客服</p>
+		<div >
+			<span class="kf-qq">客服QQ: 2794678231</span>
+			<img class="wechat-icon" src="http://m.uscdn.net/static/img/weixin.jpg" />
+		</div>
+	</div>
+</body>
+</html>

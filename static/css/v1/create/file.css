@@ -1,0 +1,132 @@
+.file-encrypt-label {
+	font-weight: bold;
+	color: #CB0000;
+	line-height: 30px;
+}
+
+.file-support-label {
+	margin-top: 13px;
+	color: #7D7D7D;
+	font-weight: 300;
+	font-size: 14px;
+}
+
+.file-upload-wrap, .file-upload-done {
+	position: relative;
+	height: 50px;
+}
+
+.file-upload-done {
+	display: none;
+}
+
+
+.file-upload-wrap .file-btn {
+	display: block;
+	position: absolute;
+	width: 350px;
+	padding: 6px 0;
+	border: 1px dashed #5890DE;
+	color: #5890DE;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0px 0px 1px #ddd;
+}
+
+.file-upload-wrap .file-input {
+	position: absolute;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+.file-upload-done .file-name {
+	float: left;
+	max-width: 400px;
+	display: inline-block;
+	outline: none;
+	border: none;
+	margin-right: 40px;
+	border-bottom: 1px solid #ddd;
+	padding: 6px 20px;
+	font-weight: bold;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.file-upload-done .file-reupload-btn {
+	float: left;
+	border: 1px solid #FF581E;
+	padding: 6px 30px;
+	display: inline-block;
+	border-radius: 5px;
+	color: #FF581E;
+	cursor: pointer;
+}
+
+.file-description {
+	width: 100%;
+}
+
+.file-encrypt {
+	display: none;
+	width: 200px;
+	margin-left: 22px;
+	height: 27px;
+}
+
+.file-name-preview {
+	position: absolute;
+	top: 254px;
+	text-align: center;
+	width: 236px;
+	overflow: hidden;
+	left: 60px;
+	color: #fff;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.file-size-preview {
+	position: absolute;
+	top: 345px;
+	width: 100px;
+	overflow: hidden;
+	left: 200px;
+	font-size: 12px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #fff;
+}
+
+.file-description-preview {
+	position: absolute;
+	top: 419px;
+	width: 289px;
+	left: 42px;
+	word-break: break-all;
+	overflow-y: auto;
+	height: 91px;
+}
+
+.user-name-preview {
+	position: absolute;
+	top: 346px;
+	width: 100px;
+	overflow: hidden;
+	left: 57px;
+	font-size: 12px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #fff;
+}
+
+
+.file-name-input {
+	width: 250px;
+	display: none;
+	float: left;
+	margin-right: 40px;
+	font-weight: bold;
+}

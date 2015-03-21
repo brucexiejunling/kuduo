@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>选择上传类型 - 有声二维码</title>
+<link rel="stylesheet" type="text/css" href="/static/css/v1/common/mobile.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/show/upload_index.css">
+</head>
+<body>
+	<div class="navbar-header app-navbar">
+		<!--  <div class="app-icons">
+			<div class="icon-bar"></div>
+			<div class="icon-bar"></div>
+			<div class="icon-bar"></div>
+		</div>-->
+		<span class="short-text">添加内容</span>
+		<if condition="$_SESSION['uid'] eq null">
+			<div class="user-login" id="user-login">登录</div>
+		</if>
+	</div>
+	<div class="container">
+		<div class="alert alert-blue content-warning">此二维码还没有内容喔</div>
+		<span class="btn btn-red add-content" id="add-content">立即添加</span>
+	</div>
+	<div class="content-type" id="content-type">
+		<div class="type-label type-text-label" id="type-text-label">
+			<div class="type-image type-text"></div>
+			<span class="type-name">文字</span>
+		</div>
+
+		<div class="type-label type-audio-label">
+			<div class="type-image type-audio" id="type-audio-label"></div>
+			<span class="type-name">声音</span>
+		</div>
+
+		<div class="type-label type-video-label" id="type-video-label">
+			<div class="type-image type-video"></div>
+			<span class="type-name">视频</span>
+		</div>
+
+		<div class="type-label type-katie-label" id="type-katie-label">
+			<div class="type-image type-katie"></div>
+			<span class="type-name">失物贴</span>
+		</div>
+
+
+		<div class="type-label type-more-label">
+			<div class="type-image type-more"></div>
+			<span class="type-name">等待更多</span>
+		</div>
+	</div>
+	<include file="Common:footer" />
+	<script type="text/javascript" src="/static/js/libs/zepto.js"></script>
+	<script type="text/javascript" src="/static/js/v1/show/upload_index.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.phone-number {
+	position: absolute;
+	top: 186px;
+	left: 117px;
+	color: #858585;
+}
+
+.message-content {
+	width: 293px;
+	height: 34px;
+	overflow-y: overlay;
+	position: absolute;
+	top: 229px;
+	left: 38px;
+	word-break: break-all;
+	color: #444;
+	font-size: 13px;
+}

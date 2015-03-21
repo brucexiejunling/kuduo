@@ -1,0 +1,24 @@
+.page-title {
+	text-align: center;
+	margin: 40px auto 60px;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 20px;
+}
+
+
+.main-content {
+	margin-bottom: 100px;
+	text-align: center;
+}
+
+.custom-alert {
+	width: 800px;
+	margin: 0 auto 25px;
+	font-size: 16px;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.resend-mail {
+	font-size: 12px;
+}

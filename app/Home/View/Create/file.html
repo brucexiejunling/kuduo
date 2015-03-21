@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="utf-8" />
+	<meta name="renderer" content="webkit" />
+	<meta name="keywords" content="酷多二维码 文件二维码 二维码上传文件" />
+	<title>{:L("create_file_website_title")}</title>
+	<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+	<link type="text/css" rel="stylesheet" href="/static/css/libs/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/common/global.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/create/common.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/create/file.css" />
+	<link type="text/css" rel="stylesheet" href="/static/js/libs/umeditor/themes/default/css/umeditor.css" >
+</head>
+<body>
+	<include file="Common:site_header" />
+	<include file="Create:step_common_top" />
+	<div class="container site-content">
+		<div class="col-lg-7">
+			<div class="form-group">
+				<div class="alert alert-info" style="font-size:14px;">
+					<span class="glyphicon glyphicon-exclamation-sign"></span>
+					暂支持的文件类型有doc，docx， ppt， pptx， pdf， xls， xlsx， wps， jpg， png， jpeg， gif， bmp，zip，rar，torrent
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label">选择文件（10M以下）：</label>
+				<if condition="$value eq null">
+				<div class="file-upload-wrap">
+					<span class="file-btn">选择文件</span>
+					<input class="form-control file-input" type="file" id="file-input" name="file-input" />
+				</div>
+				<div class="file-upload-done">
+					<div class="file-name" id="file-name"></div>
+					<input type="text" id="file-name-input" class="form-control file-name-input" />
+					<span class="file-reupload-btn">重新上传</span>
+				</div>
+				<else />
+				<div class="file-upload-wrap" style="display:none">
+					<span class="file-btn">选择文件</span>
+					<input class="form-control file-input" type="file" id="file-input" name="file-input" />
+				</div>
+				<div class="file-upload-done" style="display:block">
+					<div class="file-name" id="file-name">{$value['filename']}</div>
+					<input type="text" id="file-name-input" class="form-control file-name-input" value="{$value['filename']}" />
+					<span class="file-reupload-btn">重新上传</span>
+				</div>
+				</if>
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="file-description">文件描述：</label>
+				<if condition="$value eq null">
+				<script type="text/plain" id="file-description" class="file-description"></script>
+				<else />
+				<script type="text/plain" id="file-description" class="file-description">{$value['filedescription']|htmlspecialchars_decode}</script>
+				</if>
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="file-description">上传者</label>
+				<if condition="$value eq null">
+				<input type="text" class="form-control file-user-name" id="file-user-name" value="{$_SESSION['nickname']}" />
+				<else />
+				<input type="text" class="form-control file-user-name" id="file-user-name" value="{$value['username']}" />
+				</if>
+			</div>
+			<div class="form-group">
+				<label class="control-label short-url-label">文件加密<a href="/faq/about/" class="icon" title="文件加密是什么？"></a>：</label>
+				<if condition="$_SESSION['uid'] neq null">
+					<if condition="$value.encrypt neq null">
+					 <div class="custom-checkbox checked"></div>
+					 <input type="text" class="form-control file-encrypt input-sm" style="display:inline-block" id="file-encrypt" value="{$value['encrypt']}" placeholder="英文/数字组成的密码"/>
+					<else />
+					 <div class="custom-checkbox"></div>
+					 <input type="text" class="form-control file-encrypt input-sm" id="file-encrypt"  placeholder="英文/数字组成的密码"/>
+					</if>
+				<else />
+					<div class="file-encrypt-label">登陆后才可使用加密功能</div>
+				</if>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-lg-offset-1">
+			<div class="qr-preview text-preview">
+				<if condition="$value eq null">
+					<img class="phone-image" src="/static/img/file/file_2.png" />
+					<div class="file-name-preview" id="file-name-preview"></div>
+					<div class="file-size-preview" id="file-size-preview"></div>
+					<div class="user-name-preview" id="user-name-preview">{$_SESSION['nickname']}</div>
+					<div class="file-description-preview" id="file-description-preview"></div>
+				<else />
+					<img class="phone-image" src="/static/img/file/file_2.png" />
+					<div class="file-name-preview" id="file-name-preview">{$value['filename']}</div>
+					<div class="file-size-preview" id="file-size-preview">{$value['filesize']|filesize_format}</div>
+					<div class="user-name-preview" id="user-name-preview">{$value['username']}</div>
+					<div class="file-description-preview" id="file-description-preview">{$value['filedescription']|htmlspecialchars_decode}</div>
+				</if>
+				
+			</div>
+		</div>
+	</div>
+	<include file="Create:step_common_bottom" />
+	<include file="Common:site_footer" />
+	<script type="text/javascript" src="/static/js/libs/ajaxfileupload.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/static/js/libs/umeditor/umeditor.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/static/js/libs/umeditor/umeditor.config.js"></script>
+	<script type="text/javascript" src="/static/js/v1/create/file.js"></script>
+</body>
+</html>

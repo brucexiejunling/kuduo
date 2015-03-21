@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta content="telephone=no" name="format-detection" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<title>酷多文件码 - 酷多二维码</title>
+<link rel="stylesheet" type="text/css"	href="/static/css/v1/common/mobile.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/show/common.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/show/file.css?v=20141011_1">
+</head>
+<body>
+	<if condition="is_weixin() eq true">
+		<div class="text-center" style="color:#FE3400">微信不支持文件直接下载，请使用外部浏览器下载</div>
+	</if>
+	<div class="main-content">
+		<div class="navbar-header app-navbar" id="app-navbar">
+		<span class="short-text">文件</span>
+		<if condition="$_SESSION['uid'] eq null">
+			<div class="user-login" id="user-login">登录</div>
+		</if>
+		</div>
+		<img src="/static/img/file/file_cloud_icon.png" class="file-cloud-icon"/>
+		<div class="file-name">{$value['filename']}</div>
+		<a href="/api/download?code={$value['filepath']}" class="btn btn-info download-btn" id="download-btn">下载</a>
+		<div class="file-info">
+			<div class="user-name">{$value['username']}</div>
+			<div class="file-size">{$value['filesize']|filesize_format}</div>
+			<div class="visit-count">{$visitCount}</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="file-description">
+		<div class="tabs-1">文件描述</div>
+		<div class="description-content">
+			{$value['filedescription']|htmlspecialchars_decode}
+		</div>
+	</div>	
+	<include file="Common:footer" />
+</body>
+</html>

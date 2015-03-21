@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>音频 - 有声二维码</title>
+<link type="text/css" rel="stylesheet"
+	href="/static/css/libs/bootstrap.css" />
+<link type="text/css" rel="stylesheet" href="/static/css/v1/common/global.css" />
+<link type="text/css" rel="stylesheet"
+	href="/static/css/v1/create/common.css" />
+<link type="text/css" rel="stylesheet"
+	href="/static/css/v1/create/audio.css" />
+</head>
+<body>
+	<include file="Common:site_header" />
+	<include file="Create:step_common_top" />
+	<div class="container site-content">
+		<div class="col-lg-7">
+			<div class="form-group">
+				<label class="control-label" for="text-value">音频描述：</label>
+				<textarea class="form-control message-value" id="message-value"
+					rows="5" placeholder="对文件的描述"></textarea>
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="text-value">选择音频文件（20M以下）：</label>
+				<input class="form-control" type="file" />
+			</div>
+		</div>
+		<div class="col-lg-4 col-lg-offset-1">
+			<div class="qr-preview text-preview">
+				<img class="phone-image"
+					src="/static/img/design/iPhone4S_black_300.png" />
+			</div>
+		</div>
+	</div>
+	<include file="Create:step_common_bottom" />
+	<include file="Common:site_footer" />
+	<script type="text/javascript"
+		src="/static/js/v1/create/create_common.js"></script>
+</body>
+</html>

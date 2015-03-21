@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>{:L("user_website_title")}</title>
+	<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="/static/css/libs/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/common/global.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/user/index.css">
+</head>
+<body>
+	<include file="Common:user_header" />
+	<div class="site-content">
+		<div class="container">
+			<!-- <ul class="">
+				<li class="active"><a href="#qrcode" data-toggle="tab">二维码列表</a></li>
+			</ul> -->
+			<div class="">
+				<div class="qrcode-panel">
+					<a href="create?ref=dashboard" class="qrcode-item create-qrcode-btn">
+						<span class="create-label">新建二维码</span>
+					</a>
+					<volist name="qrList" id="qrListInfo">
+					<div class="qrcode-item">
+						<div class="create-time">{$qrListInfo['generate_time']}</div>
+						<img class="qrcode-image" shortcode="{$qrListInfo['short_code']}" src="{$qrListInfo['image']}" />
+						<div class="qrcode-item-footer">
+							<span title="数据统计（即将推出）" href="/user/analytics/{$qrListInfo['short_code']}" class="qrcode-analytics"></span>
+							<span class="qrcode-edit" title="重新编辑（高级会员有效）"></span> 
+							<a class="qrcode-download" target="_blank" href="/api/download?code={$qrListInfo['image']}" title="下载"></a>
+							<span class="qrcode-delete" shortcode="{$qrListInfo['short_code']}" title="删除"></span>
+						</div>
+					</div>
+					</volist>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="qrcode-info-mask"></div>
+	<include file="Common:site_footer" />
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+	<script type="text/javascript" src="/static/js/v1/user/index.js"></script>
+</body>
+</html>

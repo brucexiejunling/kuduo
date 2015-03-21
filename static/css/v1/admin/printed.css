@@ -1,0 +1,17 @@
+.qr-batch-printed-btn {
+	float: right;
+	padding: 6px;
+}
+
+.qr-batch-item {
+	width: 200px;
+	margin-right: 10px;
+}
+
+.qr-batch-title {
+	padding: 0;
+	text-align: center;
+	vertical-align: center;
+}
+
+

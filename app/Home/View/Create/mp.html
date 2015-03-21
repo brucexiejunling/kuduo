@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>名片 - {:L("common_app_name")}</title>
+	<link type="text/css" rel="stylesheet" href="/static/css/libs/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/common/global.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/create/common.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/create/vcard.css" />
+</head>
+<body>
+	<include file="Common:site_header" />
+	<include file="Create:step_common_top" />
+	<div class="container site-content">
+		<div class="col-lg-7">
+			<div class="edit-company-wrap">
+				<div class="upload-cover-wrap">
+					<span class="upload-cover-title">封面图片</span>
+					<if condition="$cardValue.coverImageName neq ''">
+						<span class="upload-file-wrap hide">
+						<else/> <span class="upload-file-wrap">
+					</if>
+						<span class="upload-cover-btn">上传</span>
+						<input type="file" class="form-control" id="cover-image-input" name="file-input">
+					</span>
+				</div>
+				<if condition="$cardValue.coverImageName neq ''">
+					<div class="upload-cover-done upload-done">
+    			<else/> <div class="upload-cover-done upload-done hide">
+ 				</if>
+					<div class="image-name">{$cardValue.coverImageName}</div>
+					<span class="reupload-cover-btn">重新上传</span>
+				</div>
+				<div class="upload-logo-wrap clear-fix">
+					<span class="upload-logo-title">公司logo</span>
+					<if condition="$cardValue.logoImageName neq ''">
+						<span class="upload-file-wrap hide">
+						<else/> <span class="upload-file-wrap">
+					</if>
+						<span class="upload-logo-btn">上传</span>
+						<input type="file" class="form-control" id="logo-image-input" name="file-input">
+					</span>
+				</div>
+				<if condition="$cardValue.logoImageName neq ''">
+					<div class="upload-logo-done upload-done">
+    			<else/> <div class="upload-logo-done upload-done hide">
+ 				</if>
+					<div class="image-name">{$cardValue.logoImageName}</div>
+					<span class="reupload-logo-btn">重新上传</span>
+				</div>
+				<div class="company-name clear-fix">
+					<input type="text" class="form-control" placeholder="您的公司名称..." value="{$cardValue.companyName}">
+				</div>
+				<div class="company-website">
+					<input type="text" class="form-control" placeholder="您的公司网站..." value="{$cardValue.companySite}">
+					<i class="glyphicon glyphicon-globe"></i>
+				</div>
+				<div class="company-address">
+					<input type="text" class="form-control" placeholder="您的公司地址..." value="{$cardValue.companyAddress}">
+					<i class="glyphicon glyphicon-map-marker"></i>
+				</div>
+				<div class="company-product">
+					<div>公司产品/服务</div>
+					<textarea class="form-control" placeholder="您的公司产品简介, 140字以内..." >{$cardValue.productInfo}</textarea>
+				</div>
+			</div>
+			<div class="edit-personal-wrap">
+				<div class="upload-avatar-wrap">
+					<span class="upload-avatar-title">个人头像</span>
+					<if condition="$cardValue.avatarImageName neq ''">
+						<span class="upload-file-wrap hide">
+						<else/> <span class="upload-file-wrap">
+					</if>
+						<span class="upload-avatar-btn">上传</span>
+						<input type="file" class="form-control" id="avatar-image-input" name="file-input">
+					</span>
+				</div>
+				<if condition="$cardValue.avatarImageName neq ''">
+					<div class="upload-avatar-done upload-done">
+    			<else/> <div class="upload-avatar-done upload-done hide">
+ 				</if>
+					<div class="image-name">{$cardValue.avatarImageName}</div>
+					<span class="reupload-avatar-btn">重新上传</span>
+				</div>
+				<div class="person-name clear-fix">
+					<input type="text" class="form-control" placeholder="您的姓名..." value="{$cardValue.personName}">
+				</div>
+				<div class="person-job">
+					<input type="text" class="form-control" placeholder="您的职位..." value="{$cardValue.personJob}">
+				</div>
+				<div class="person-phone">
+					<input type="text" class="form-control" placeholder="您的联系电话..." value="{$cardValue.personPhone}">
+					<i class="glyphicon glyphicon-earphone"></i>
+				</div>
+				<div class="person-email">
+					<input type="text" class="form-control" placeholder="您的邮箱地址..." value="{$cardValue.personEmail}">
+					<i class="glyphicon glyphicon-envelope"></i>
+				</div>
+				<div class="person-website">
+					<input type="text" class="form-control" placeholder="您的个人网站..." value="{$cardValue.personSite}">
+					<i class="glyphicon glyphicon-globe"></i>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-lg-offset-1">
+			<div class="qr-preview card-preview-wrap">
+				<img class="phone-image"
+					src="/static/img/phone/card_1.png" />
+				<div class="card-content">
+					<div class="company-info">
+						<div class="card-header">
+							<img src="{$cardValue.cardCover}<empty name='cardValue.cardCover'>/static/img/create/card_cover.png</empty>" class="card-cover">
+							<span class="company-name">{$cardValue.companyName}<empty name="cardValue.companyName">公司名称</empty></span>
+							<img src="{$cardValue.companyLogo}<empty name='cardValue.companyLogo'>/static/img/create/default_company_logo.png</empty>" class="company-logo">
+						</div>
+						<div class="card-main">
+							<div class="main-row company-website-wrap">
+								<a class="company-website" href="{$cardValue.companySite}">{$cardValue.companySite}<empty name="cardValue.companySite">公司网站</empty></a>
+							</div>
+							<div class="main-row company-address">{$cardValue.companyAddress}<empty name="cardValue.companyAddress">公司地址</empty></div>
+							<div class="main-row company-product-wrap">
+								<div class="company-product-title">产品/服务</div>
+								<div class="company-product">{$cardValue.productInfo}<empty name="cardValue.productInfo">产品/服务简介...</empty></div>
+							</div>
+						</div>
+					<div class="personal-info">
+						<div class="card-header">
+							<img src="{$cardValue.personAvatar}<empty name='cardValue.personAvatar'>/static/img/create/default_person_avatar.png</empty>" class="person-avatar">
+							<div class="person-name">{$cardValue.personName}<empty name="cardValue.personName">姓名</empty></div>
+							<div class="person-job">{$cardValue.personJob}<empty name="cardValue.personJob">职位</empty></div>
+						</div>
+						<div class="card-main">
+							<div class="main-row person-phone">{$cardValue.personPhone}<empty name="cardValue.personPhone">联系电话</empty></div>
+							<div class="main-row person-email">{$cardValue.personEmail}<empty name="cardValue.personEmail">邮箱地址</empty></div>
+							<div class="main-row person-website-wrap">
+								<a class="person-website" href="{$cardValue.personSite}">{$cardValue.personSite}<empty name="cardValue.personSite">个人网页</empty></a>
+							</div>
+						</div>
+					</div>
+					</div>
+
+<!-- 					<div class="info-type-tab">
+						<div class="company-info-tab selected">公司</div>
+						<div class="personal-info-tab">个人</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<include file="Create:step_common_bottom" />
+	<include file="Common:site_footer" />
+	<script type="text/javascript" src="/static/js/libs/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="/static/js/v1/create/vcard.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+html {
+	min-height: 100%;
+}
+
+body {
+	background: #fff;
+	background-attachment: fixed;
+	min-height: 100%;
+}
+
+.main-content {
+	text-align: center;
+}
+
+.app-navbar {
+	position: relative;
+	background: #fff;
+	height: 44px;
+	border-bottom: 1px solid #E5E5E5;
+	text-align: center;
+	width: 100%;
+}
+
+.user-login {
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	color: #333;
+	text-decoration: none;
+	display: inline-block;
+	float: right;
+	font-size: 16px;
+}
+
+.app-navbar .short-text {
+	display: inline-block;
+	font-size: 18px;
+	margin-top: 10px;
+	max-width: 180px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.go-back {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	background: url(/static/img/back.png) no-repeat 0px 0px;
+	background-size: 16px;
+	width: 30px;
+	height: 30px;
+}
+
+
+.app-icons {
+	display: block;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.app-navbar .icon-bar {
+	background: #333;
+}
+
+.go-next {
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	display: inline-block;
+	float: right;
+	font-size: 16px;
+}

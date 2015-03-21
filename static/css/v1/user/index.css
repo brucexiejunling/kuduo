@@ -1,0 +1,101 @@
+.site-content {
+	min-height: 600px;
+	margin-top: 30px;
+}
+
+.qrcode-panel {
+	padding-top: 20px;
+	text-align: center;
+}
+
+.qrcode-item {
+	display: block;
+	border: 1px solid #42B1F0;
+	border-top: none;
+	float: left;
+	margin: 10px;
+	padding-bottom: 5px;
+	width: 220px;
+}
+
+.qrcode-item .qrcode-image {
+	cursor: pointer;
+	width: 100%;
+}
+
+.qrcode-item .create-time {
+	background: #8BBCFF;
+	color: #fff;
+	padding: 3px 5px;
+	font-size: 14px;
+}
+
+.qrcode-item-footer {
+	padding: 0 10px;
+}
+
+.qrcode-item-footer .qrcode-delete {
+	background: url(/static/img/qrcode_info_icon_sprite.png) 0 -9px no-repeat;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.qrcode-item-footer .qrcode-edit {
+	background: url(/static/img/qrcode_info_icon_sprite.png) 0 -75px no-repeat;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.qrcode-item-footer .qrcode-analytics {
+	background: url(/static/img/qrcode_info_icon_sprite.png) 0 -149px no-repeat;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.qrcode-item-footer .qrcode-download {
+	background: url(/static/img/qrcode_info_icon_sprite.png) 0 -219px no-repeat;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.create-qrcode-btn {
+	display: inline-block;
+	padding: 56px 0 38px;
+	text-align: center;
+	border: 1px dashed #1C87D9;
+	background: #FFF;
+}
+
+.create-qrcode-btn:hover {
+	text-decoration: none;
+}
+
+.custom-modal .toggle-image {
+	display: none;
+	vertical-align: middle;
+	font-size: 14px;
+}
+
+.custom-modal .toggle-text {
+	font-size: 14px;
+}
+
+.custom-modal .toggle-image > img {
+	width: 19px;
+	margin-right: 10px;
+}
+
+.qrcode-item-footer {
+	text-align: left;
+}

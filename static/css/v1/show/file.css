@@ -1,0 +1,93 @@
+.main-content {
+	background: url(/static/img/file/file_bg.png) no-repeat 0 0;
+	background-size: 100% 100%;
+}
+
+.main-content .app-navbar {
+	background: transparent;
+	border-bottom: none;
+	color: #fff;
+}
+
+.main-content .app-navbar .user-login {
+	color: #fff;
+}
+
+.file-cloud-icon {
+	width: 100px;
+	margin: 20px auto 10px;
+}
+
+.main-content .file-name{
+	margin: 0 20px;
+	text-align: center;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 15px;
+	overflow: hidden;
+	color: #fff;
+}
+
+.main-content .download-btn {
+	border-radius: 5px;
+	padding: 8px 50px;
+	margin-top: 10px;
+	text-decoration: none;
+}
+
+.file-info {
+	color: #fff;
+	padding: 15px 0;
+	background: rgba(0, 0, 0, 0.2);
+	margin-top: 35px;
+	font-size: 12px;
+}
+
+.file-info .user-name{
+	float: left;
+	background: url(/static/img/file/user.png) no-repeat 0 0;
+	background-size: 13px 16px;
+	padding-left: 21px;
+	margin-left: 18px;
+	text-align: left;
+	max-width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.file-info .file-size {
+	float: left;
+	background: url(/static/img/file/size.png) no-repeat 0 0;
+	background-size: 16px 16px;
+	margin-left: 20px;
+	padding-left: 24px;
+	text-align: left;
+}
+
+.file-info .visit-count {
+	float: left;
+	background: url(/static/img/file/eye.png) no-repeat 0 -4px;
+	background-size: 20px 20px;
+	margin-left: 20px;
+	padding-left: 25px;
+	text-align: left;
+}
+
+.file-description {
+	padding: 10px;
+}
+
+.file-description .tabs-1 {
+	border-bottom: 2px solid #26AC4D;
+	padding: 5px 15px;
+	text-align: center;
+	display: inline-block;
+	font-size: 15px;
+	color: #666;
+}
+
+.file-description .description-content {
+	padding: 10px 5px;
+	text-align: left;
+}

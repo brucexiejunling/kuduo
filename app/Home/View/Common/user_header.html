@@ -1,0 +1,29 @@
+<!--for pc-->
+<div class="navbar navbar-default site-header-navbar navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<div class="navbar-brand">
+				<a href="http://www.ikuduo.com/" title="酷多二维码"><img width="190" src="/static/img/logo.png" class="global-logo" alt="酷多二维码" /></a>
+			</div>
+		</div>
+		<div class="navbar-collapse site-header-list-wrap collapse">
+			<ul class="nav navbar-nav">
+				<!-- <li class="menu-item"><a href="/about/faq">常见问题</a></li> -->
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="menu-item"><a href="/user">我的二维码</a></li>
+			<!-- 	<li class="menu-item"><a href="/user/message" class="user-message-notify">消息<span class="icons"></span></a></li> -->
+				<li class="menu-item"><a href="/user/settings">设置</a></li>
+				<li class="menu-item user-menu-list-wrap">
+					<a href="javascript:void(0);">{$_SESSION['nickname']}<b class="caret"></b></a>	
+					<ul class="dropdown-menu user-menu-list">
+						<li><a href="/user/settings" class="user-settings"><span class="icons"></span>设置</a></li>
+				<!-- <li><a href="/user/message" class="user-message"><span class="icons"></span>消息</a></li> -->		
+						<li class="divider"></li>
+						<li><a href="/user/quit" class="user-exit"><span class="icons"></span>退出</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

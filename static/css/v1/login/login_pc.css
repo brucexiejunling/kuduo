@@ -1,0 +1,131 @@
+.main-content {
+	padding: 100px 0 50px;
+	margin-bottom: 100px;
+	background: url(/static/img/login/login_bg.jpg?v=0.9.0) center no-repeat;
+	background-size: 100% 100%;
+	border-bottom: 3px solid #2B95C7;
+}
+
+.login-form {
+	float: right;
+	margin-right: 40px;
+	width: 400px;
+	padding: 25px 53px;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+.user-account, .user-password {
+	display: block;
+	margin: 0 auto;
+	padding-left: 35px;
+	width: 300px;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.user-account {
+	background: url(/static/img/user_icons_sprite.png) 4px 3px no-repeat;
+}
+
+.user-account:focus {
+	background: url(/static/img/user_icons_sprite.png) 4px -52px no-repeat;
+}
+
+.user-password {
+	background: url(/static/img/user_icons_sprite.png) 4px -116px no-repeat;
+}
+
+.user-password:focus {
+	background: url(/static/img/user_icons_sprite.png) 4px -181px no-repeat;
+}
+
+.resend-register-email {
+	color: #608CFF;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.get-login-box {
+	margin-top: 35px;
+}
+
+.get-login {
+	display: block;
+	float: left;
+	width: 100px;
+	padding: 8px 14px;
+	border-radius: 5px;
+}
+
+.go-register {
+	display: block;
+	float: left;
+	font-size: 13px;
+	margin: 22px 0 0 14px;
+	text-decoration: none;
+}
+
+.go-register:hover, .get-password-back:hover {
+	text-decoration: none;
+}
+
+.go-register:after {
+	content: " | ";
+	padding: 0px 4px;
+}
+
+.get-password-back {
+	display: block;
+	float: left;
+	font-size: 13px;
+	margin: 22px 0 0 4px;
+	text-decoration: none;
+}
+
+.login-alert-box {
+	display: none;
+	padding: 5px 10px;
+	font-size: 14px;
+	width: 300px;
+	margin: 0 auto 10px;
+}
+
+/**第三方登录**/
+.sns-login-wrap {
+	width: 240px;
+	border-top: 1px solid #ddd;
+	padding-top: 5px;
+}
+
+.sns-login-wrap label {
+	display: block;
+	float: left;
+	font-size: 14px;
+	margin-top: 10px;
+	font-weight: normal;
+}
+
+.sns-login-icon-wrap {
+	display: block;
+	float: left;
+	width: 130px;
+	margin-left: 10px;
+	text-align: left;
+}
+
+.sina-login-icon {
+	display: inline-block;
+	margin: 8px 10px;
+	width: 24px;
+	height: 24px;
+	background: url(/static/img/social_share.png) 0px 0px no-repeat;
+}
+
+.qq-login-icon {
+	display: inline-block;
+	margin: 8px 10px;
+	width: 24px;
+	height: 24px;
+	background: url(/static/img/social_share.png) 0px -60px no-repeat;
+}

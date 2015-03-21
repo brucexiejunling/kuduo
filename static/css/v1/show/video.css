@@ -1,0 +1,191 @@
+html {
+	min-height: 100%;
+}
+
+body {
+	background: #222;
+	min-height: 100%;
+}
+
+.app-navbar {
+	position: relative;
+	background: #2E2E2E;
+	height: 44px;
+	text-align: center;
+	width: 100%;
+}
+
+.app-navbar .user-login {
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	color: #333;
+	text-decoration: none;
+	display: inline-block;
+	float: right;
+	font-size: 16px;
+}
+
+.app-navbar .short-text {
+	display: inline-block;
+	font-size: 18px;
+	margin-top: 10px;
+	width: 260px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 100;
+	color: #fff;
+}
+
+.video-wrap {
+	position: relative;
+}
+
+.video-wrap .user-head {
+	width: 50px;
+	margin: 8px;
+	border-radius: 25px;
+	float: left;
+}
+
+.video-wrap .user-info-wrap {
+	padding: 5px 0;
+}
+
+.video-wrap .user-info-wrap .other-info {
+	float: left;
+	width: 200px;
+	margin: 13px 0 0 5px;
+	overflow: hidden;
+}
+
+.user-info-wrap .other-info .user-name {
+	display: block;
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.video-source-wrap {
+	width: 100%;
+	position: relative;
+}
+
+.video-source-wrap .btn-play {
+	cursor: pointer;
+	width: 56px;
+	height: 56px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -28px 0 0 -28px;
+	border-radius: 60px;
+	overflow: hidden;
+	border: 2px solid #fff;
+	z-index: 4;
+}
+
+.video-source-wrap .btn-play .play {
+	width: 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	border-width: 15px 15px 15px 22px;
+	border-style: dashed dashed dashed solid;
+	border-color: transparent transparent transparent #fff;
+	position: absolute;
+	left: 21px;
+	top: 13px;
+}
+
+.video-play-wrap {
+	display: none;
+	background: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+}
+
+.video-play-wrap .close-btn {
+	padding: 20px 0;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+}
+
+.video-play-wrap .video-playing {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.user-info-wrap .other-info .video-date {
+	display: block;
+	color: #6D6D6D;
+	font-size: 14px;
+}
+
+.video-wrap .video-image {
+	width: 100%;
+}
+
+.video-operate-bar {
+	color: #6D6D6D;
+	font-size: 12px;
+	padding: 12px 0;
+	margin-top: 5px;
+	display: table;
+	width: 100%;
+	border-bottom: 1px solid #333;
+}
+
+.video-operate-bar .icon {
+	display: table-cell;
+	width: 33.3%;
+	text-align: center;
+	font-size: 16px;
+}
+
+.video-operate-bar .add-like-btn {
+	border-right: 1px solid #666;
+}
+
+.video-operate-bar .comment-btn {
+	border-right: 1px solid #666;
+}
+
+.add-like-btn.pressed {
+	color: #FF0000;
+}
+
+.video-description {
+	padding: 10px 10px 20px;
+	color: #aaa;
+}
+
+.video-description .less .less-content {
+	white-space: nowrap;
+	overflow: hidden;
+	width: 92%;
+	display: inline-block;
+	text-overflow: ellipsis;
+	float: left;
+}
+
+.video-description .more {
+	display: none;
+}
+
+.video-description .more .more-content {
+	width: 92%;
+	display: inline-block;
+	float: left;
+}
+
+.video-description .less .less-btn, .video-description .more .more-btn {
+	margin: 3px 0 0 10px;
+	float: left;
+}

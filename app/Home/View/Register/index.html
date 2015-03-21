@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{:L("register_website_title")}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="用户登录 酷多二维码登陆 二维码登录 免费 二维码制作 二维码营销" />
+	<meta name="description" content="欢迎免费注册酷多二维码，酷多二维码 -全国最好的一站式二维码服务平台。提供免费的二维码生成美化服务，为您的二维码营销保驾护航。" />
+	<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="/static/css/libs/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/common/global.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/login/register_pc.css">
+</head>
+<body>
+	<include file="Common:site_header" />
+	<div class="main-content">
+		<div class="container">
+				<h3 class="register-title">用户注册</h3>
+			<!--邮箱注册start-->
+			<div class="register-form">
+				<div class="register-type-select">
+					<span class="register-mail-btn selected">邮箱注册</span>
+					<span class="register-phone-btn">手机注册</span>
+				</div>
+				<div class="register-form-mail form-inline" id="register-form-mail">
+					<div class="form-group">
+						<label for="email-input">邮箱</label>
+						<input class="form-control email-input" id="email-input"
+							type="text" 
+							placeholder="{:L('register_form_account_mail_placeholder')}">
+					</div>
+					<div class="form-group">
+						<label for="user-password-mail">密码</label>
+						<input class="form-control user-password-mail"
+							id="user-password-mail" type="password"
+							placeholder="{:L('register_form_password_placeholder')}">
+					</div>
+					<div class="form-group">
+						<label for="verify-code">验证码</label>
+						<input class="form-control verify-code" id="verify-code"
+							placeholder="{:L('register_form_verify_code_placeholder')}">
+						<img src=" {:U('Api/createVerify')}" id="verify-code-image"
+							title="{:L('register_form_verify_code_title')}"
+							class="verify-code-image" /> <a href="javascript:void(0)"
+							id="verify-code-link" class="verify-code-link">{:L("register_form_verify_code_title")}</a>
+					</div>
+					<div class="alert alert-danger alert-sm register-alert-box"></div>
+					<div class="form-group register-submit-wrap">
+						<span class="btn btn-info register-submit" id="register-submit-email">{:L("register_form_submit_btn")}</span>
+					</div>
+				</div>
+				<div class="register-form-phone form-inline" id="register-form-phone">
+					<div class="form-group">
+						<label for="phone-number">手机号码</label>
+						<input class="form-control phone-number" id="phone-number" type="text" placeholder="手机号码">
+					</div>
+					<div class="form-group">
+						<label for="user-password-phone">密码</label>
+						<input class="form-control user-password-phone" id="user-password-phone" type="password" placeholder="设置6-16位的密码">
+					</div>
+					<div class="form-group">
+						<label for="phone-code">验证码</label>
+						<input class="form-control phone-code" id="phone-code" type="text" placeholder="验证码">
+						<span class="btn btn-success send-phone-code" id="send-phone-code">发送</span>
+					</div>
+					<div class="alert alert-danger alert-sm register-alert-box"></div>
+					<div class="form-group register-submit-wrap">
+						<span class="btn btn-info register-submit" id="register-submit-phone">立即注册</span>
+					</div>
+				</div>
+			</div>
+			<div class="login-jump">
+				<div class="login-jump-link">已有账号？<a href="/login?rel=register">登录</a></div>
+			</div>
+		</div>
+	</div>
+	<include file="Common:site_footer" />
+	<script type="text/javascript" src="/static/js/v1/login/register_01.js"></script>
+</body>
+</html>

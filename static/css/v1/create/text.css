@@ -1,0 +1,54 @@
+.text-value {
+	resize: none;
+}
+
+.qr-preview-text-value {
+	position: absolute;
+	width: 300px;
+	height: 400px;
+	background: #FFFFFF;
+	left: 31px;
+	top: 114px;
+	font-size: 14px;
+	padding: 8px 10px;
+	overflow-y: auto;
+	word-break: break-all;
+}
+
+.qr-preview-text-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 378px;
+}
+
+.normal-text-wrap, .umeditor-text-wrap {
+	width: 100%;
+}
+
+.text-editor {
+	width: 100%;
+}
+
+.normal-text-wrap {
+	display: none;
+}
+
+.text-btn-wrap {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+
+.text-btn-wrap > span {
+	padding: 0 10px;
+	color: #bbb;
+}
+
+.text-btn-wrap > span.selected {
+	font-weight: bold;
+	color: #000;
+	border-bottom: 3px solid #C91C1C;
+	padding-bottom: 11px;
+}

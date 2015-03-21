@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>{:L("show_upload_video_card_website_title")}</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/common/mobile.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/show/video_card_upload.css?v=20141015">
+</head>
+<body>
+	<div class="navbar-header app-navbar">
+		<span class="short-text">音频/视频</span>
+		<if condition="$_SESSION['uid'] eq null">
+			<div class='user-login' id="user-login">登录</div>
+		<else />
+			<span class="video-card-preview">预览</span>
+		</if>
+	</div>
+	<div class="alert-tip">视频和音频长度不能超过60秒喔。二维码将与登录后的账号绑定。</div>
+	<div class="site-content">
+		<if condition='$_SESSION["show_video_card_upload_path"] eq null'>
+		<!-- 用户未上传过视频 -->
+		<div class="upload-section">
+			<div class="video-input-wrap">
+				<span class="video-input-label">点击选择文件</span>
+				<input type="file" name="video-input" id="video-input" class="video-input">
+			</div>
+			<div class="alert alert-danger alert-box alert-sm"></div>
+			<span class="upload-btn btn btn-primary" id="upload-btn">上传</span>
+		</div>
+		<div class="video-section">
+			<img src="" class="video-preview" />
+			<div class="audio-preview">音频已上传（可预览）</div>
+			<span class="upload-btn btn btn-danger" id="reupload-btn">重新上传</span>
+		</div>
+		<else />
+		<!-- 用户已经上传过视频 -->
+		<div class="upload-section" style="display:none;">
+			<div class="video-input-wrap">
+				<span class="video-input-label">点击选择文件</span>
+				<input type="file" name="video-input" id="video-input" class="video-input">
+			</div>
+			<div class="alert alert-danger alert-box alert-sm"></div>
+			<span class="upload-btn btn btn-primary" id="upload-btn">上传</span>
+		</div>
+		<div class="video-section"  style="display:block;">
+			<if condition="$_SESSION['show_video_card_upload_type'] eq 'mp4'">
+			<img src="{:C('RESOURCE_DOMAIN')}{$_SESSION['show_video_card_image_path']}" class="video-preview" />
+			<div class="audio-preview" style="display:none">音频已上传（可预览）</div>
+			<else />
+			<img src="{:C('RESOURCE_DOMAIN')}{$_SESSION['show_video_card_image_path']}" style="display:none;" class="video-preview" />
+			<div class="audio-preview">音频已上传（可预览）</div>
+			</if>
+			<span class="upload-btn btn btn-danger" id="reupload-btn">重新上传</span>
+		</div>
+	</if>
+	<div class="video-info-divider"><div class="divider-line"></div><span class="line-text">填写您的描述</span></div>
+	<textarea  type="text" id="video-description" class="video-description form-control" rows="4" placeholder="对音频、视频的描述，想对Ta说的话...">{$_SESSION['show_video_card_description']}</textarea>
+	</div>
+	<div class="submit-video-card-wrap" id="submit-video-card-wrap">
+		<span class="btn submit-video-btn" id="submit-video-btn">提交</span>
+	</div>
+	<include file="Common:footer" />
+	<script type="text/javascript" src="/static/js/libs/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/libs/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="/static/js/v1/show/video_card_upload.js?v=20141015"></script>
+</body>
+</html>

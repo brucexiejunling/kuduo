@@ -1,0 +1,166 @@
+.app-navbar {
+	position: relative;
+	background: #fff;
+	height: 44px;
+	border-bottom: 2px solid #FF5B11;
+	text-align: center;
+	width: 100%;
+}
+
+.user-login {
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	color: #333;
+	text-decoration: none;
+	display: inline-block;
+	float: right;
+	font-size: 16px;
+}
+
+.app-navbar .short-text {
+	display: inline-block;
+	font-size: 18px;
+	margin-top: 10px;
+	max-width: 180px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.video-preview {
+	width: 100%;
+	max-height: 220px;
+}
+
+.audio-preview {
+	background: #D8D8D8;
+	text-align: center;
+	padding: 40px 0;
+	font-weight: bold;
+	font-size: 16px;
+}
+.video-card-preview {
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	display: inline-block;
+	float: right;
+	font-size: 16px;
+	padding: 0 5px 5px;
+}
+
+/**==============以上为公用部分================*/
+
+.alert-box {
+	display: none;
+}
+
+.alert-tip {
+	box-shadow: 0px 1px 3px #999;
+	padding: 8px 10px;
+	color: #55A8FF;
+	font-weight: bold;
+}
+
+.site-content {
+	padding: 5px 15px;
+	margin-bottom: 80px;
+}
+
+.video-input-wrap {
+	border: 1px dashed #2577C9;
+	margin: 10px 0;
+	padding: 10px;
+	text-align: center;
+	position: relative;
+	color: #2577C9;
+}
+
+.video-input {
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.video-info-divider {
+	position: relative;
+	text-align: center;
+	height: 20px;
+	margin: 5px 0;
+}
+
+.video-input-label {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.video-info-divider .line-text {
+	color: #999;
+	background: #fff;
+	padding: 5px;
+	position: relative;
+	z-index: 1;
+}
+
+.video-info-divider .divider-line {
+	position: absolute;
+	height: 1px;
+	width: 100%;
+	background: #ddd;
+	top: 10px;
+	z-index: 0;
+}
+
+
+.upload-section {
+	padding: 15px 0;
+}
+
+.video-section {
+	display: none;
+	padding: 15px 0;
+}
+
+.upload-section .upload-btn, .video-section .upload-btn {
+	display: block;
+	margin-top: 20px;
+}
+
+.video-description {
+	height: auto;
+	padding: 3px 0;
+	margin-top: 20px;
+}
+
+.video-source-link {
+	text-decoration: none;
+	color: #0E9DF4;
+	font-size: 12px;
+	display: block;
+	margin-top: 10px;
+}
+
+.submit-video-card-wrap {
+	position: fixed;
+	background: #fff;
+	width: 100%;
+	padding: 10px 0;
+	box-shadow: 0px -1px 4px #aaa;
+	text-align: center;
+	bottom: 0;
+}
+
+.submit-video-card-wrap .submit-video-btn {
+	background: #E2892D;
+	width: 90%;
+	display: block;
+	margin: 0 auto;
+	padding: 10px 0;
+	border-radius: 5px;
+	color: #fff;
+}

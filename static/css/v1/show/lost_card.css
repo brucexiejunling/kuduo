@@ -1,0 +1,154 @@
+body {
+	background-color: #F5F5F5;
+	font-family: Arial, Helvetica, microsoft yahei, sans-serif;
+}
+.katie-alert {
+	background: #fff;
+	box-shadow: 0px 2px 3px #ddd;
+	padding: 10px 15px;
+	color: #388AEA;
+	border-top: 3px solid #FF6820;
+	font-weight: bold;
+	border-bottom: 1PX solid #333;
+}
+
+.katie-user {
+	background-image: #BE335E;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ff4f02), color-stop(1, #BE335E));
+	background-image: -moz-linear-gradient(top, #ff4f02, #BE335E); /* Firefox */
+}
+
+.user-default-head {
+	padding: 30px 20px 45px;
+}
+
+.user-default-head .user-image {
+	border: 2px solid #FFF;
+	width: 80px;
+	display: block;
+	float: left;
+	margin-left: 15px;
+}
+
+.user-default-head .user-info {
+	float: left;
+	width: 186px;
+	margin: 27px 0 0 -4px;
+	text-align: left;
+	padding-left: 25px;
+	font-size: 17px;
+	color: #fff;
+	font-family: Arial, Helvetica, microsoft yahei, sans-serif;
+}
+
+.user-default-head .user-name {
+	max-width: 160px;
+	background: url(/static/img/lost_card/user.png) 0 0 no-repeat;
+	background-size: 18px;
+	padding-left: 27px;
+	line-height: 30px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.user-default-head .user-phone {
+	max-width: 160px;
+	background: url(/static/img/lost_card/phone.png) 0 0 no-repeat;
+	background-size: 18px;
+	padding-left: 27px;
+	line-height: 30px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	background-position: 0 5px;
+}
+
+.katie-user .thing-name-wrap {
+	padding: 12px 15px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.thing-name-wrap .thing-name{
+	padding: 0px 0 0px 28px;
+	background: transparent url(/static/img/lost_card/tag.png) 0 0 no-repeat;
+	background-size: 20px;
+	float: left;
+	color: #fff;
+	font-weight: bold;
+	max-width: 280px;
+	text-align: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.katie-intro {
+	font-size: 16px;
+	text-align: left;
+	padding: 10px 15px;
+	padding-bottom: 15px;
+	font-family: "arial, helvetica, sans-serif";
+}
+
+.katie-intro .katie-title-label {
+	text-align: left;
+	padding: 8px 15px;
+	border-bottom: 2px solid #EB7026;
+	display: inline-block;
+}
+
+.katie-intro .katie-intro-content {
+	padding: 10px 0 50px 0;
+	font-size: 15px;
+}
+
+.katie-comment-wrap {
+	position: fixed;
+	background: #fff;
+	bottom: 0;
+	width: 96%;
+	border-top: 1px solid #fff;
+	box-shadow: 0px -1px 2px #ddd; 
+	border-top:	1px solid #ddd;
+	padding: 10px;
+}
+
+.comment-finish-box {
+	display: none;
+}
+
+.katie-comment-wrap .re-comment-btn {
+	background: #E93D3D;
+	height: 18px;
+	padding: 10px 20px;
+	margin: 0 50px;
+	line-height: 20px;
+	border-radius: 5px;
+	display: block;
+}
+
+.katie-comment-area {
+	display: inline-block;
+	width: 65%;
+	height: 28px;
+	padding: 4px 9px;
+	float: left;
+	border-radius: 5px;
+	border: 1px solid #999;
+	color: #333;
+	outline: none;
+}
+
+.katie-comment-btn {
+	height: 18px;
+	padding: 10px 20px;
+	line-height: 20px;
+	display: inline-block;
+	float: left;
+	margin-left: 10px;
+	width: 11%;
+	border-radius: 5px;
+	background: #F39A2F;
+}
+

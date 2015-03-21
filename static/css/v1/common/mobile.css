@@ -1,0 +1,425 @@
+/**
+* 移动端公有样式
+*
+*/
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+	b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+	details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	menu, nav, section {
+	display: block;
+}
+
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, "microsoft yahei", sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+}
+
+input, textarea, select {
+	outline: none;
+}
+
+input:focus, textarea:focus {
+	border: 1px solid #96C4F1;
+	box-shadow: inset 0px 0px 1px #96C4F1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.clearfix:before, .clearfix:after {
+	display: table;
+	content: " ";
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.help-block {
+	display: block;
+}
+
+.help-inline {
+	display: inline-block;
+	*display: inline;
+}
+
+.hide {
+	display: none;
+}
+
+.on {
+	display: inline-block;
+	*display: block;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.form-group {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, box-shadow
+		ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.input-sm {
+	padding: 1px 4px;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-align: center;
+}
+
+.container>.navbar-header {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.navbar-header .icon-bar {
+	display: block;
+	width: 22px;
+	height: 2px;
+	border-radius: 1px;
+	background: #fff;
+	margin-top: 5px;
+}
+
+.navbar-header:after {
+	display: block;
+	clear: both;
+	content: " ";
+	height: 0;
+	visibility: visible;
+}
+
+.btn {
+	display: inline-block;
+	*display: block;
+	text-align: center;
+	padding: 13px 35px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.btn-danger {
+	color: #fff;
+	background-color: #e96656;
+}
+
+.btn-warning {
+	
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #4DAAFF;
+}
+
+.btn-info {
+	color: #fff;
+	background-color: #4DAAFF;
+}
+
+.btn-success {
+	color: #fff;
+	background-color: #53CC9C;
+}
+
+.btn-default {
+	color: #666;
+	background: #F5F5F0;
+}
+
+.btn-sm {
+	padding: 6px 15px;
+	font-size: 80%;
+}
+
+.btn.disabled {
+	cursor: default;
+	opacity: 0.6;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	-webkit-user-select: none;
+}
+
+.alert-default {
+	background: #E4E8EF;
+	border-color: #ddd;
+	color: #333;
+}
+
+.alert-primary {
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	color: #31708f;
+}
+
+.alert-danger {
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	color: #a94442;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+.alert-sm {
+	padding: 5px;
+}
+
+.pull-left {
+	display: inline-block;
+	*display: block;
+	float: left;
+}
+
+.pull-right {
+	display: inline-block;
+	*display: block;
+	float: right;
+}
+
+
+
+/**以上为框架**/
+
+
+/**快速注册登录**/
+.user-quick-login {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.4);
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+.user-quick-decoration {
+	position: relative;
+	margin: 120px 30px 0;
+	padding: 5px;
+	background: rgba(255,255,255,0.5);
+}
+
+.user-quick-decoration .close-btn {
+	position: absolute;
+	right: -8px;
+	top: -12px;
+	background: url(/static/img/mobile/close.png) 0 0 no-repeat;
+	background-size: 30px 30px;
+	padding: 16px;
+}
+
+.user-quick-login-form {
+	background: #fff;
+	padding: 16px;
+}
+
+.user-quick-login-form  .form-control {
+	display: inline-block;
+	width: 82%;
+	margin-top: 6px;
+	padding: 2px 12px 2px 31px;
+}
+
+.user-quick-login-form .user-account {
+	background: url(/static/img/mobile_sprite_icons.png) 4px -81px no-repeat;
+}
+
+.user-quick-login-form .user-account:focus {
+	background: url(/static/img/mobile_sprite_icons.png) 4px -124px no-repeat;
+	border: 1px solid #4DAAFF;
+}
+
+.user-quick-login-form .user-password {
+	background: url(/static/img/mobile_sprite_icons.png) 4px 0px no-repeat;
+}
+
+.user-quick-login-form .user-password:focus {
+	background: url(/static/img/mobile_sprite_icons.png) 4px -36px no-repeat;
+	border: 1px solid #4DAAFF;
+}
+
+.user-quick-login-form .login-btn {
+	padding: 7px 26px;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+.user-quick-login-form .form-group label {
+	font-size: 13px;
+	display: block;
+	width: 100px;
+}
+
+.user-quick-login-form .register-switch-btn {
+	display: inline-block;
+	font-size: 12px;
+	padding: 4px 12px;
+	float: right;
+	border-radius: 2px;
+	background: #fff;
+	border: 1px solid #ccc;
+	letter-spacing: 1px;
+}
+
+.user-quick-login-form .login-title {
+	border-bottom: 1px solid #ddd;
+	font-size: 18px;
+	padding-bottom: 8px;
+	margin-bottom: 20px;
+}
+
+.user-quick-login-form .alert-danger, .user-quick-register-form .alert-danger {
+	display: none;
+}
+
+.user-quick-register-form {
+	display:none;
+	background: #fff;
+	padding: 16px;
+}
+
+.user-quick-register-form .form-group label {
+	font-size: 14px;
+}
+
+.user-quick-register-form .register-title {
+	border-bottom: 1px solid #ddd;
+	font-size: 18px;
+	padding-bottom: 8px;
+	margin-bottom: 20px;
+}
+
+.user-quick-register-form .login-switch-btn {
+	display: inline-block;
+	font-size: 12px;
+	padding: 4px 12px;
+	float: right;
+	border-radius: 2px;
+	background: #fff;
+	border: 1px solid #ccc;
+	letter-spacing: 1px;
+}
+
+.user-quick-register-form .form-control {
+	display: inline-block;
+	width: 82%;
+	margin-top: 6px;
+	padding: 2px 12px 2px 31px;
+}
+
+.user-quick-register-form .user-account {
+	background: url(/static/img/mobile_sprite_icons.png) 4px -84px no-repeat;
+}
+
+.user-quick-register-form .user-account:focus {
+	background: url(/static/img/mobile_sprite_icons.png) 4px -127px no-repeat;
+	border: 1px solid #4DAAFF;
+}
+
+.user-quick-register-form .alert-warning {
+	font-size: 12px;
+}
+
+.user-quick-register-form .register-btn {
+	padding: 7px 20px;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+.user-quick-login-form .resend-register-email {
+	color: #608CFF;
+}

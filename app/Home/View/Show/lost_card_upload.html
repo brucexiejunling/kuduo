@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>酷多失物贴 - 酷多二维码</title>
+<link rel="stylesheet" type="text/css" href="/static/css/v1/common/mobile.css">
+<link rel="stylesheet" type="text/css"	href="/static/css/v1/show/lost_card_upload.css?v=20141018">
+</head>
+<body>
+	<div class="navbar-header app-navbar">
+		<span class="short-text">添加信息</span>
+		<if condition="$_SESSION['uid'] eq null">
+			<div class="user-login" id="user-login">登录</div>
+		</if>
+	</div>
+	<div class="text-left lost-card-tips">提示：您填写的信息将与此二维码绑定。不登录也可以绑定，登录后绑定更安全。</div>
+	<div class="main-content">
+		
+		<div class="form-group">
+			<input type="text" maxlength="40" id="owner-nickname" class="owner-nickname form-control input-sm" placeholder="您的昵称" />
+		</div>
+		<div class="form-group">
+			<input type="text" maxlength="40" id="thing-name" class="thing-name form-control input-sm" placeholder="物品名称" />
+		</div>
+		<div class="form-group">
+			<textarea type="text" id="owner-introduce"
+				class="owner-introduce form-control input-sm"
+				placeholder="您的常用联系方式、物品的描述。如果您未登录，请务必填写联系方式以便拾到者联系您。"></textarea>
+		</div>
+		<div class="form-group divide-line">
+			<input type="text" class="phone-number form-control input-sm" placeholder="手机（选填，提供拾到者联系，不会泄露）" />
+		</div>
+		<div class="alert alert-danger alert-box alert-sm"></div>
+	</div>
+	<div class="submit-wrap">
+		<div class="btn btn-primary submit-btn" id="submit-btn" login="{$_SESSION['uid']}">提交</div>
+	</div>
+	<include file="Common:footer" />
+	<script type="text/javascript" src="/static/js/libs/zepto.js"></script>
+	<script type="text/javascript" src="/static/js/v1/show/lost_card_upload.js?v=20141018"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta charset="utf-8" />
+<meta name="renderer" content="webkit" />
+<title>{:L("create_video_website_title")}</title>
+<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+<link type="text/css" rel="stylesheet" href="/static/css/libs/bootstrap.css" />
+<link type="text/css" rel="stylesheet" href="/static/css/v1/common/global.css" />
+<link type="text/css" rel="stylesheet" href="/static/css/v1/create/common.css" />
+<link type="text/css" rel="stylesheet" href="/static/css/v1/create/video.css" />
+<link type="text/css" rel="stylesheet" href="/static/js/libs/umeditor/themes/default/css/umeditor.css" >
+</head>
+<body>
+	<include file="Common:site_header" />
+	<include file="Create:step_common_top" />
+	<div class="container site-content">
+		<div class="col-lg-7">
+			<if condition="$_SESSION['uid'] eq null">
+			<div class="alert alert-info">视频类型的二维码需要先进行登录才能上传</div>
+			</if>
+			<div class="form-group">
+				<label class="control-label">选择视频（10M以下）：</label>
+				<if condition="$value eq null">
+				<div class="video-upload-wrap">
+					<span class="video-btn">选择视频文件</span>
+					<input class="form-control video-input" type="file" id="video-input" name="video-input" />
+				</div>
+				<div class="video-upload-done">
+					<span class="video-reupload-btn">重新上传</span>
+				</div>
+				<else />
+				<div class="video-upload-wrap" style="display:none">
+					<span class="video-btn">选择文件</span>
+					<input class="form-control video-input" type="file" id="video-input" name="video-input" />
+				</div>
+				<div class="video-upload-done" style="display:block">
+					<span class="video-reupload-btn">重新上传</span>
+				</div>
+				</if>
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="text-value">视频标题：</label>
+				<input class="form-control video-name" id="video-name" value="{$value['videoname']}" placeholder="视频的标题" />
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="text-value">上传者</label>
+				<if condition="$value neq null">
+				<input class="form-control video-user" id="video-user" value="{$value['username']}" placeholder="视频上传者" />
+				<else />
+				<input class="form-control video-user" id="video-user" value="{$_SESSION['nickname']}" placeholder="视频上传者" />
+				</if>
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="text-value">视频描述：</label>
+				<script type="text/plain" id="video-des-editor" class="video-des-editor">{$value['videodes']|htmlspecialchars_decode}</script>
+			</div>
+			
+		</div>
+		<div class="col-lg-4 col-lg-offset-1">
+			<div class="qr-preview text-preview">
+				<div class="video-name-preview">{$value['videoname']}</div>
+				<img class="phone-image" src="/static/img/video/video_2.png" />
+				<div class="video-des-preview">{$value['videodes']|htmlspecialchars_decode}</div>
+				<if condition="$value neq null">
+					<div class="username-preview">{$value['username']}</div>
+				<else />
+					<div class="username-preview">{$_SESSION['nickname']}</div>
+				</if>
+				<div class="video-size-preview">{$value['videosize']|filesize_format}</div>
+			</div>
+		</div>
+	</div>
+	<include file="Create:step_common_bottom" />
+	<include file="Common:site_footer" />
+	<script type="text/javascript" src="/static/js/libs/ajaxfileupload.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/static/js/libs/umeditor/umeditor.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/static/js/libs/umeditor/umeditor.config.js"></script>
+	<script type="text/javascript" src="/static/js/v1/create/video.js"></script>
+</body>
+</html>

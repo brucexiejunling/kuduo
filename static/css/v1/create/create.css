@@ -1,0 +1,144 @@
+.site-main {
+	margin: 0 0 100px;
+}
+
+.qr-type-wrap {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0 10px 40px;
+	width: 240px;
+	text-align: center;
+	height: 400px;
+}
+
+.qr-type-wrap:hover {
+	text-decoration: none;
+}
+
+.qr-type-wrap:hover .type-image-hover {
+	display: block;
+}
+
+.qr-type-wrap .design-title {
+	text-align: center;
+	color: #FF6161;
+	font-weight: bold;
+	padding: 10px 20px;
+	white-space: nowrap;
+}
+
+.qr-type-wrap .design-image {
+	position: absolute;
+	width: 222px;
+	top: 32px;
+	left: 0;
+}
+
+.type-image-hover {
+	z-index: 1;
+	display: none;
+	position: absolute;
+	top: 32px;
+	left: 0;
+}
+
+.create-alert-continue {
+		margin-bottom: 0;
+}
+
+.create-alert-continue .continue-btn {
+	margin: 0 8px;
+	color: #205CE6;
+}
+
+
+.create-alert-continue .cancel-btn {
+	margin: 0 8px;
+	color: #B0B0B0;
+}
+
+.select-qrcode-type-title {
+	padding: 15px;
+	color: #5D5D5D;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.select-qrcode-type-list {
+	list-style: none;
+	padding-left: 0;
+	font-size: 13px;
+	border-top: 3px solid #00AEFF;
+	padding-top: 2px;
+	background: #fff;
+}
+
+.select-qrcode-type-list .type-heading {
+	border-bottom: 1px solid #D3D3D3;
+	padding: 12px 0 12px 20px;
+	color: #999;
+	background-color: #fff;
+}
+
+.select-qrcode-type-list .type-content-wrap {
+	display: none;
+	border-bottom: 1px solid #EFEFEF;
+	padding-bottom: 2px;
+}
+
+.type-list-number {
+	float: right;
+	width: 40px;
+	height: 20px;
+	border: 1px solid #999;
+	border-radius: 10px;
+	margin-right: 15px;
+	text-align: center;
+	background-color: #fff;
+}
+
+.select-qrcode-type-list .type-content {
+	font-size: 12px;
+	border-bottom: 1px solid #efefef;
+	background-color: #fff;
+	color: #444;
+	padding: 7px 0;
+}
+
+.select-qrcode-type-list .type-content .title {
+	border-left: 3px solid #77B1FF;
+	padding: 8px 0 8px 10px;
+}
+
+.type-heading .icons {
+	background: url(/static/img/sprite-icons.png) -150px -3px no-repeat;
+	float: right;
+	width: 20px;
+	height: 20px;
+}
+
+.type-heading.selected .icons {
+	background: url(/static/img/sprite-icons.png) -149px -79px no-repeat;
+}
+
+.qrcode-step {
+	width: 900px;
+	margin: 40px auto 50px;
+	background: #ddd;
+	border-radius: 31px;
+}
+
+.qrcode-step .step{
+	display: inline-block;
+	width: 297px;
+	text-align: center;
+}
+
+.qrcode-step .step.current-step {
+	color: #fff;
+	background: #22C2EB;
+	padding: 10px 0;
+	border-radius: 28px;
+}
+

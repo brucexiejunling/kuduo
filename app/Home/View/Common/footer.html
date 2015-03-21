@@ -1,0 +1,164 @@
+<!-- 快速注册登录页面代码 -->
+<div class="user-quick-login">
+	<div class="user-quick-decoration">
+		<div class="close-btn"></div>
+		<div class="user-quick-login-form">
+			<div class="login-title">
+				<span>酷多账号登录</span>
+				<span class="btn btn-default register-switch-btn">5秒注册</span>
+			</div>
+			<div class="form-group">
+				<label>邮箱/手机号码</label>
+				<input type="text" placeholder="您的注册邮箱或手机号码" class="form-control user-account"/>
+			</div>
+			<div class="form-group">
+				<label>密码</label>
+				<input type="password" placeholder="您的密码" class="form-control user-password"/>
+			</div>
+			<div class="form-group">
+				<div class="alert alert-danger alert-sm"></div>
+				<span class="btn btn-primary login-btn">登录</span>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="/static/js/libs/zepto.js"></script>
+<script type="text/javascript" src="http://openapi.baidu.com/widget/social/1.0/share.js"></script>
+<script type="text/javascript">
+	$(function() {
+		window.QRCODE = {};
+		QRCODE.regx = {
+				password: /^[a-zA-Z0-9]{6,16}$/,
+				phone:  /^(0|86|17951)?(13[0-9]|15[012356789]|18[0-9]|14[57])[0-9]{8}$/,
+				mail: /^[a-zA-Z0-9-._]{1,50}@[a-zA-Z0-9-]{1,65}.(com|net|org|info|biz|([a-z]{2,3}.[a-z]{2}))$/i,
+		}
+		
+		//快速注册和登录切换
+		$(".user-quick-login-form .register-switch-btn").click(function() {
+			location.href = "/register"
+		});
+		
+		//focus隐藏alert框
+		$(".user-quick-login-form input").focus(function() {
+			$(".user-quick-login-form").find(".alert-danger").hide();
+		})
+		
+		//快速登录
+		var loginFlag = false;
+		$(".user-quick-login-form .login-btn").click(function() {
+			if (loginFlag) {
+				return;
+			} else {
+				loginFlag = true;
+			}
+			
+			var _self = $(this);
+			var account = $.trim($(".user-quick-login-form .user-account").val()),
+				  password = $.trim($(".user-quick-login-form .user-password").val());
+		
+			if (!QRCODE.regx.mail.test(account) && !QRCODE.regx.phone.test(account)) {
+				$(".user-quick-login-form .alert-danger").text("账号格式错误").show();
+				loginFlag = false;
+				return;
+			}
+
+			if (!QRCODE.regx.password.test(password)) {
+				$(".user-quick-login-form .alert-danger").text("密码格式错误，密码只能包含英文和数字.").show();
+				loginFlag = false;
+				return;
+			}
+
+			try {
+				_hmt.push(['_trackEvent', "mobile_login_in_btn", "click", 1]);
+			} catch (e) {}
+			
+			_self.text("正在登录...").addClass("disabled");
+			$.post(
+				"/login/getLogin",
+				{account:account, password:password, type:"web_app_register"},
+				function(data) {
+					loginFlag = false;
+					_self.text("登录").removeClass("disabled");
+					if (data.flag == 1) {
+						window.location.reload();
+					} else {
+						try {
+							_hmt.push(['_trackEvent', "mobile_login_failed", "click", 1]);
+						} catch (e) {}
+						if (data.flag == 4) {
+							$(".user-quick-login-form .alert-danger").html(data.message + "<span class='resend-register-email'>重新发送邮件</span>").show();
+							$(".resend-register-email").bind("click", resendMail);
+						} else {
+							$(".user-quick-login-form .alert-danger").text(data.message).show();
+						}
+						
+					}
+				},
+				"json"
+			);
+		});
+		
+		//关闭登录页面
+		$(".user-quick-decoration .close-btn").click(function() {
+			$(".user-quick-login").hide();
+			try {
+				_hmt.push(['_trackEvent', "mobile_login_form_close", "click", 1]);
+			} catch (e) {}
+		});
+		
+		//唤出登录界面
+		$("#user-login").click(function() {
+			$(".user-quick-login").show();
+			try {
+				_hmt.push(['_trackEvent', "mobile_login_form_open", "click", 1]);
+			} catch (e) {}
+		});
+
+		//重新发送激活邮件
+		var resendMailing = false;
+		function resendMail() {
+			var mail = $.trim($(".user-quick-login-form .user-account").val()),
+				_self = $(this);
+
+			if (!QRCODE.regx.mail.test(mail)) {
+				$(".user-quick-login-form .alert-danger").text("邮箱格式错误").show();
+				return;
+			}
+
+			if (resendMailing) {
+				return;
+			} else {
+				resendMailing = true;
+			}
+			_self.text("正在发送...");
+			$.post(
+				"/register/resendRegisterMail",
+				{email:mail},
+				function(data) {
+					_self.text("重新发送邮件");
+					resendMailing = false;
+					alert(data.message);
+				},
+				"json"
+			);
+		};
+	});
+</script>
+<script>
+	// var _hmt = _hmt || [];
+	// (function() {
+	//   var hm = document.createElement("script");
+	//   hm.src = "//hm.baidu.com/hm.js?81ee2e28978fee9cec0b1b9327bddf50";
+	//   var s = document.getElementsByTagName("script")[0]; 
+	//   s.parentNode.insertBefore(hm, s);
+	// })();
+
+	// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	// })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	// ga('create', 'UA-55623693-1', 'auto');
+	// ga('send', 'pageview');
+
+</script>

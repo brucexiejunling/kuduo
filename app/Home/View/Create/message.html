@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="utf-8" />
+	<meta name="renderer" content="webkit" />
+	<title>{:L("create_message_website_title")}</title>
+	<meta name="keywords" content="酷多二维码 短信二维码" />
+	<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+	<link type="text/css" rel="stylesheet" href="/static/css/libs/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/common/global.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/create/common.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/create/message.css" />
+</head>
+<body>
+	<include file="Common:site_header" />
+	<include file="Create:step_common_top" />
+	<div class="container site-content">
+		<div class="col-lg-7">
+			<div class="form-group">
+				<label class="control-label" for="phone-number">手机号码：</label> 
+				<input type="text" maxlength="18" value="{$messageValue.phone}" class="form-control phone-number-input" id="phone-number" placeholder="手机号码" />
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="message-content">短信内容：</label>
+				<textarea class="form-control message-content-input" id="message-content"
+					rows="10" placeholder="输入短信内容">{$messageValue.message}</textarea>
+			</div>
+		</div>
+		<div class="col-lg-4 col-lg-offset-1">
+			<div class="qr-preview message-preview">
+				<img class="phone-image" src="/static/img/message/message_2.png" />
+				<div class="phone-number">{$messageValue.phone}</div>
+				<div class="message-content">{$messageValue.message}</div>
+			</div>
+		</div>
+	</div>
+	<include file="Create:step_common_bottom" />
+	<include file="Common:site_footer" />
+	<script type="text/javascript" src="/static/js/v1/create/create_common.js"></script>
+	<script type="text/javascript" src="/static/js/v1/create/message.js"></script>
+</body>
+</html>

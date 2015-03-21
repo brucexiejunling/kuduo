@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>{:L("user_website_title")}</title>
+	<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="/static/css/libs/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/common/global.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/user/settings.css">
+	<link rel="stylesheet" type="text/css" href="/static/js/libs/datepicker/datepicker.css">
+	<link rel="stylesheet" type="text/css" href="/static/js/libs/jquery.imgareaselect/css/imgareaselect-default.css">
+</head>
+<body>
+	<include file="Common:user_header" />
+	<div class="container setting-container">
+		<div class="setting-heading">完善信息</div>
+		<div class="col-lg-3 setting-menu-list">
+			<div class="menu-title">我的账号</div>
+			<ul class="menu-list">
+				<li class="menu-item selected" type="basic-info">基本资料</li>
+			<!-- 	<li class="menu-item" type="modify-avatar">修改头像</li> -->
+				<li class="menu-item" type="modify-password">修改密码</li>
+				<!-- <li class="menu-item" type="account-security">账号安全</li>
+				<li class="menu-item" type="notification-settings">消息设置</li>
+				<li class="menu-item" type="account-binding">账号绑定</li> -->
+			</ul>
+		</div>
+		<div class="col-lg-8 setting-content">
+			<div class="basic-info form">
+				<div class="form-group">
+					<label class="title">昵称:</label>
+					<input class="form-control nick-name" type="text" value="{$basicInfo.nickname}" >
+				</div>
+				<div class="form-group gender-form-group">
+					<label class="title">性别:</label>
+					<span class="gender-select-wrap">
+						<label for="male">男</label>
+						<input class="gender" type="radio" <if condition="$basicInfo.gender = '1'">checked="checked"</if> name="gender" id="male">
+						<label for="female">女</label>
+						<input class="gender" type="radio" <if condition="$basicInfo.gender = '0'">checked="checked"</if> name="gender" id="female">
+					</span>
+					<div class="clear-fix"></div>
+				</div>
+				<div class="form-group birthday-wrap">
+					<label class="title">生日:</label>
+					<input class="form-control birthday" data-date-format="yyyy-mm-dd" id="birthday" type="text" value="<if condition='$basicInfo.birthday'>{$basicInfo.birthday}<else/>2014-01-01</if>">
+					<i class="glyphicon glyphicon-calendar"></i>
+				</div>
+				<div class="form-group region">
+					<label class="title">地区:</label>
+					<div class="province-select-wrap dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button">
+							<if condition="($basicInfo['province']['area_id'] neq -1) AND ($basicInfo['province']['area_id'] neq 0)">
+								<span class="btn-text" aid="{$basicInfo.province.area_id}">{$basicInfo.province.title}</span>
+    						<else />
+								<span class="btn-text" aid="-1">请选择</span>
+							</if>
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li class="dropdown-menu-item" id="-1">请选择</li>
+							<li class="dropdown-menu-item" id="2">北京市</li>
+							<li class="dropdown-menu-item" id="22">天津市</li>
+							<li class="dropdown-menu-item" id="41">河北</li>
+							<li class="dropdown-menu-item" id="225">山西</li>
+							<li class="dropdown-menu-item" id="356">内蒙古</li>
+							<li class="dropdown-menu-item" id="471">辽宁</li>
+							<li class="dropdown-menu-item" id="586">吉林</li>
+							<li class="dropdown-menu-item" id="656">黑龙江</li>
+							<li class="dropdown-menu-item" id="803">上海市</li>
+							<li class="dropdown-menu-item" id="823">江苏</li>
+							<li class="dropdown-menu-item" id="943">浙江</li>
+							<li class="dropdown-menu-item" id="1045">安徽</li>
+							<li class="dropdown-menu-item" id="1168">福建</li>
+							<li class="dropdown-menu-item" id="1263">江西</li>
+							<li class="dropdown-menu-item" id="1374">山东</li>
+							<li class="dropdown-menu-item" id="1532">河南</li>
+							<li class="dropdown-menu-item" id="1709">湖北</li>
+							<li class="dropdown-menu-item" id="1826">湖南</li>
+							<li class="dropdown-menu-item" id="1963">广东</li>
+							<li class="dropdown-menu-item" id="2106">广西</li>
+							<li class="dropdown-menu-item" id="2230">海南</li>
+							<li class="dropdown-menu-item" id="2258">重庆市</li>
+							<li class="dropdown-menu-item" id="2299">四川</li>
+							<li class="dropdown-menu-item" id="2502">贵州</li>
+							<li class="dropdown-menu-item" id="2600">云南</li>
+							<li class="dropdown-menu-item" id="2746">西藏</li>
+							<li class="dropdown-menu-item" id="2827">陕西</li>
+							<li class="dropdown-menu-item" id="2945">甘肃</li>
+							<li class="dropdown-menu-item" id="3046">青海</li>
+							<li class="dropdown-menu-item" id="3098">宁夏</li>
+							<li class="dropdown-menu-item" id="3125">新疆</li>
+							<li class="dropdown-menu-item" id="3235">台湾</li>
+							<li class="dropdown-menu-item" id="3236">香港</li>
+							<li class="dropdown-menu-item" id="3237">澳门</li>
+						</ul>
+					</div>
+					<div class="city-select-wrap dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button">
+							<if condition="($basicInfo['city']['area_id'] neq -1) AND ($basicInfo['city']['area_id'] neq 0)">
+								<span class="btn-text" aid="{$basicInfo.city.area_id}">{$basicInfo.city.title}</span>
+    						<else />
+								<span class="btn-text" aid="-1">请选择</span>
+							</if>
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li class="dropdown-menu-item">请选择</li>
+						</ul>
+					</div>
+					<div class="clear-fix"></div>
+				</div>
+				<div class="form-group">
+					<label class="title introduction">个人简介:</label>
+					<textarea class="form-control introduction" >{$basicInfo.introduction}</textarea>
+				</div>
+				<div class="form-group clear-fix save-basic-info-wrap">
+					<span class="btn btn-info save-btn save-basic">保存</span>
+				</div>
+			</div>
+			<div class="modify-avatar form">
+				<div class="upload-avatar-wrap">
+					<span class="btn btn-info">上传头像</span>
+					<span class="tips">(支持的图片格式为jpg,jpeg,png,gif. 最大2M)</span>
+					<input type="file" id="user-avatar-input" name="file-input">
+				</div>
+				<div class="user-avatar-wrap">
+					<img src="{:C('DOMAIN_NAME')}{$basicInfo.avatar}" class="user-avatar">
+				</div>	
+				<img class="user-avatar-with-original-size" style="display: none; position: fixed; left: -1000px; top: -1000px" src="{:C('DOMAIN_NAME')}{$basicInfo.avatar}">
+
+				<div class="avatar-preview-wrap">
+					<div class="preview-title">头像预览</div>
+					<div class="preview-avatar-wrap">
+						<img src="{:C('DOMAIN_NAME')}{$basicInfo.avatar}">	
+					</div>
+				</div>
+				<div class="save-avatar-wrap clear-fix">
+					<span class="btn btn-info save-btn">保存</span>
+				</div>
+			</div>
+			<div class="modify-password form">
+				<div class="current-password">
+					<label>当前密码:</label>
+					<input placeholder="6-16位字母数字或下划线" type="password" class="form-control">
+				</div>
+				<div class="new-password">
+					<label>新密码:</label>
+					<input placeholder="6-16位字母数字或下划线" type="password" class="form-control">
+				</div>
+				<div class="confirm-password">
+					<label>确认新密码:</label>
+					<input placeholder="6-16位字母数字或下划线" type="password" class="form-control">
+				</div>
+				<div class="form-group clear-fix save-password-wrap">
+					<span class="btn btn-info save-btn">保存</span>
+				</div>
+			</div>
+			<div class="account-security form">
+				这是账号安全页面
+			</div>
+			<div class="notification-settings form">这是消息设置页面</div>
+			<div class="account-binding form">
+				<div class="tips">
+				</div>
+				<div class="links">
+					<div class="weibo">
+						<img src="/static/img/settings/weibo.png">
+						<span>新浪微博</span>
+						<a href=""><span class="bind-btn">立即绑定</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<include file="Common:site_footer" />
+	<script type="text/javascript" src="/static/js/libs/datepicker/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="/static/js/libs/jquery.imgareaselect/scripts/jquery.imgareaselect.pack.js"></script>
+	<script type="text/javascript" src="/static/js/libs/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="/static/js/v1/user/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+.main-content {
+	padding: 40px 0 50px;
+	margin-bottom: 100px;
+	border-bottom: 3px solid #2B95C7;
+	height: 540px;
+}
+
+.main-content .container {
+	width: 800px;
+}
+
+.main-content .register-title {
+	text-align: center;
+	padding-bottom: 25px;
+}
+
+.register-mail-btn, .register-phone-btn{
+	padding: 10px 40px;
+	border-bottom: 1px solid #ddd;
+	cursor: pointer;
+	font-weight: bold;
+	color: #8e8e8e;
+}
+
+.register-mail-btn.selected, .register-phone-btn.selected {
+	border-bottom: 2px solid #B70C0C;
+	color: #000;
+}
+
+.register-form {
+	display: block;
+	float: left;
+	width: 490px;
+	padding: 25px 53px;
+	border-right: 1px solid #ccc;
+}
+
+
+.register-form .form-group label{
+	width: 80px;
+}
+
+.register-form .email-input,
+.register-form .user-password-mail,
+.register-form .phone-number,
+.register-form .user-password-phone {
+	width: 280px;
+}
+
+.register-form .form-group {
+	display: block;
+	margin-top: 30px;
+}
+
+.login-jump {
+	display: block;
+	float: left;
+	width: 260px;
+	text-align: center;
+}
+
+.login-jump-link {
+	margin-top: 180px;
+}
+
+.register-form .verify-code {
+	display: inline;
+	width: 80px;
+}
+
+.verify-code-image {
+	margin-left: 10px;
+	margin-top: -3px;
+	cursor: pointer;
+	width: 80px;
+	height: 39px;
+}
+
+.verify-code-link {
+	font-size: 14px;
+	margin-left: 10px;
+	color: #436FBD;
+	text-decoration: underline;
+}
+
+.send-phone-code {
+	display: inline-block;
+	margin-left: 10px;
+	padding: 11px 15px;
+	text-align: center;
+	font-size: 80%;
+	border-radius: 5px;
+}
+
+.register-form-phone .phone-code {
+	display: inline-block;
+	width: 80px;
+}
+
+.register-form-phone {
+	display: none;
+}
+
+.register-submit-wrap {
+	margin-top: 25px;
+}
+
+.register-submit {
+	padding: 8px 14px;
+	border-radius: 5px;
+}
+
+.register-alert-box {
+	display: none;
+	padding: 4px 10px;
+	margin-top: 20px;
+}

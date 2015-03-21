@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>联系我们 - 有声</title>
+<link rel="stylesheet" type="text/css"
+	href="/static/css/libs/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/common/global.css">
+<style>
+.main-content {
+	padding-top: 50px;
+	background: #FDFDFD;
+	padding-bottom: 60px;
+}
+
+.weibo-btn {
+	margin-left: 20px;
+}
+
+.weixin-label {
+	font-size: 16px;
+	text-align: center;
+}
+
+.download-label {
+	font-size: 14px;
+}
+
+.download-btn {
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+.content-second {
+	margin-top: 30px;
+}
+</style>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js"
+	type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<include file="Common:site_header" />
+	<div class="main-content">
+		<div class="container">
+			<div class="row">
+				<h3 class="page-header">联系我们</h3>
+				<div class="col-lg-6">
+					<div class="clearfix">
+						<label class="text-danger pull-left">新浪微博</label>
+						<wb:follow-button uid="3954256289" class="pull-left weibo-btn"
+							type="red_1" width="67" height="24"></wb:follow-button>
+					</div>
+					<blockquote>
+						<small class="text-primary">您可以获取最新产品的动态</small> <small
+							class="text-primary">还可以跟其他用户互动交流</small> <small
+							class="text-primary">我们也希望您积极评论留言、看到您最真挚的建议与反馈</small>
+					</blockquote>
+				</div>
+				<div class="col-lg-6">
+					<div class="clearfix">
+						<label class="text-success pull-left">微信公众号『有声二维码』</label>
+					</div>
+					<blockquote class="clearfix">
+						<div class="col-lg-7">
+							<small class="text-primary">参与最新的朋友圈活动</small> <small
+								class="text-primary">微信端免费生成二维码</small> <small
+								class="text-primary">有声优惠码定期免费发放</small>
+						</div>
+						<div class="col-lg-3">
+							<img width="100%"
+								src="https://mp.weixin.qq.com/misc/getqrcode?fakeid=3084608801&token=1181605786&style=1"
+								alt="微信公众号『有声二维码』" />
+							<p class="weixin-label">微信扫描关注</p>
+						</div>
+					</blockquote>
+				</div>
+			</div>
+			<div class='row content-second'>
+				<div class="col-lg-6">
+					<div class="clearfix">
+						<label class="text-warning pull-left">常规联系方式</label>
+					</div>
+					<blockquote>
+						<small class="text-primary">商务广告合作：<a
+							href="mailto:bd@usheng.me">bd@usheng.me</a></small> <small
+							class="text-primary">产品咨询：<a
+							href="mailto:support@usheng.me">support@usheng.me</a></small>
+					</blockquote>
+				</div>
+				<div class="col-lg-6">
+					<div class="clearfix">
+						<label class="text-info pull-left">有声二维码App下载</label>
+					</div>
+					<blockquote class="clearfix">
+						<div class="col-lg-7">
+							<small class="text-primary">更优质的用户体验</small> <small
+								class="text-primary">更全面的扫描功能</small> <small
+								class="text-primary">更轻巧、无骚扰</small>
+						</div>
+						<div class="col-lg-3">
+							<button class="btn btn-danger  download-btn">前往下载</button>
+						</div>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+	</div>
+	<include file="Common:site_footer" />
+</body>
+</html>

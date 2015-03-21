@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>验证邮件 - 酷多二维码</title>
+<link rel="stylesheet" type="text/css" href="/static/css/libs/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/common/global.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/login/email_register_success.css">
+</head>
+<body>
+	<include file="Common:site_header" />
+	<div class="container">
+		<h3 class="page-title">验证邮件</h3>
+		<div class="main-content">
+			<div class="alert alert-success custom-alert-success">
+				<strong>已发送验证邮件至您的邮箱</strong>
+				<div>验证邮件24小时内有效，请尽快登陆您的邮箱，点击链接完成验证！</div>
+				<span class="custom-alert-success-tips">提醒：若未收到邮件，请检查您的垃圾箱，邮件有可能被误认为垃圾或广告邮件</span>
+			</div>
+			<div class="text-center">
+				<a href="/login/?rel=sendmail" class="btn btn-link go-blogin-btn">前往登陆</a>
+				<a href="/?rel=sendmail" class="btn btn-link go-back-homepage">返回主页</a>
+			</div>
+		</div>
+	</div>
+	<include file="common:site_footer" />
+	<script type="text/javascript" src="/static/js/v1/user/forgetpassword.js"></script>
+</body>
+</html>

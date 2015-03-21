@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>印刷产品管理</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+	<link type="text/css" rel="stylesheet"	href="/static/css/libs/united.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/common/global.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/admin/common.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/admin/printed.css" />
+	<link type="text/css" rel="stylesheet"	href="/static/js/libs/jqcrop/css/jquery.Jcrop.css" />
+	<link type="text/css" rel="stylesheet" href="/static/js/libs/jquery.color/jquery.color.css" />
+</head>
+<body>
+	<include file="Admin:header" />
+	<div class="container main-content">
+		<div class="row">
+			<include file="Admin:sidebar" />
+			<div class="col-lg-10">
+			<if condition="isset($_GET['codeName'])">
+					<div class="panel panel-default">
+					  <div class="panel-heading qr-batch-title">
+					    <span class="panel-title">代号 {$_GET['codeName']}</span>
+				    	<button class="btn btn-success qr-batch-printed-btn back">返回</button>
+				    	<button class="btn btn-danger qr-batch-printed-btn qr-batch-download" id="qr-batch-download-{$_GET['codeName']}">下载全部</button>
+					  </div>
+					  <div class="panel-body">
+					  	<volist name="qrCodeData" id="qr">
+						    <div class="thumbnail qr-batch-item pull-left">
+						      <img src="{$qr.image}" alt="二维码图片">
+						      <div class="caption">
+									<if condition="$qr.status eq 1">
+										<a class="btn btn-info qr-batch-use" id="qr-batch-use-{$qr.id}" role="button">使用</a>
+										<a class="btn btn-danger qr-batch-lock" id="qr-batch-lock-{$qr.id}" role="button">锁定</a>
+									<elseif condition="$qr.status eq 0" />
+										<a class="btn btn-default" role="button">已使用</a>
+										<a class="btn btn-danger qr-batch-lock" id="qr-batch-lock-{$qr.id}" role="button">锁定</a>
+									<else />
+										<a class="btn btn-default" role="button">使用</a>
+										<a class="btn btn-danger" role="button">已锁定</a>
+									</if>
+						      </div>
+						    </div>
+						</volist>
+					  </div>
+					</div>
+			<else />
+				<div class="short-url-panel">
+					<div class="printed-state">
+						<h2 class="title">印刷产品使用情况</h2>
+						<table>
+						<th>
+							<tr>
+								<th class="state-title">发放总数</th>
+								<th class="state-title">已使用</th>
+								<th class="state-title">未使用</th>
+								<th class="state-title">已锁定</th>
+								<th class="state-title">生产批次</th>
+							</tr>
+							<tr>
+								<td class="state-statics">{$state['total']}</td>
+								<td class="state-statics">{$state['used']}</td>
+								<td class="state-statics">{$state['unused']}</td>
+								<td class="state-statics">{$state['locked']}</td>
+								<td class="state-statics">{$state['batch']}</td>
+							</tr>
+						</th>
+						</table>
+					</div>	
+				</div>
+					<div class="qr-batch-list">
+						<table class="table table-striped table-hover ">
+							<thead>
+							<tr>
+								<th>#</th>
+								<th>类型</th>
+								<th>代号</th>
+								<th>时间</th>
+								<th>是否印刷</th>
+								<th></th>
+							</tr>
+							</thead>
+							<tbody>
+								<volist name="printedData" id="qrPrinted">
+									<tr>
+										<td>{$qrPrinted.id}</td>
+										<td>{$qrPrinted.type}</td>
+										<td>{$qrPrinted.code_name}</td>
+										<td>{$qrPrinted.ctime}</td>
+										<if condition="$qrPrinted.status eq 0">
+											<td>未印刷</td>
+										<else />
+											<td class="qr-batch-status-used">已印刷</td>
+										</if>
+										<td><a href="?codeName={$qrPrinted.code_name}">查看</a></td>
+									</tr>
+								</volist>
+							</tbody>
+						</table> 
+					</div>
+			</if>
+			</div>
+		</div>
+	</div>
+	<include file="Admin:notification" />
+
+	<script type="text/javascript" src="/static/js/libs/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/v1/admin/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/js/v1/admin/common.js"></script>
+	<script type="text/javascript" src="/static/js/v1/admin/printed.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>{:L('user_analytics_website_title')}</title>
+<link rel="stylesheet" type="text/css" href="/static/css/libs/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/common/global.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/user/analytics.css">
+<script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-10/esl.js"></script>
+</head>
+<body>
+	<include file="Common:user_header" />
+	<div class="site-main">
+		<div class="container" data-spy="scroll" data-target=".sidebar-nav">
+
+			<div class="col-lg-9">
+				<div id="chart-main" role="main" style="height: 400px"></div>
+				<div id="chart-main1" role="main" style="height: 400px"></div>
+				<div id="chart-main2" role="main" style="height: 400px"></div>
+			</div>
+			<div class="col-lg-3">
+				<div class="sidebar-nav">
+					<ul class="nav">
+						<li><a href="#chart-main">jQuery</a></li>
+						<li><a href="#chart-main1">jQuery</a></li>
+						<li><a href="#chart-main2">jQuery</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<include file="common:site_footer" />
+	<script type="text/javascript" src="/static/js/libs/bootstrap.min.js"></script>
+	<script type="text/javascript">
+            // 路径配置
+            require.config({
+                paths:{ 
+                    'echarts' : 'http://echarts.baidu.com/build/echarts',
+                    'echarts/chart/bar' : 'http://echarts.baidu.com/build/echarts'
+                }
+            });
+            
+             //数据加载
+            require(
+                [
+                    'echarts',
+                    'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
+                ],
+                function(ec) {
+                    // 基于准备好的dom，初始化echarts图表
+                    var myChart = ec.init(document.getElementById('chart-main')),
+                        myChart1 = ec.init(document.getElementById('chart-main1')),
+                        myChart2 = ec.init(document.getElementById('chart-main2'));
+
+                    var option = {
+                        title: {
+                          'text': "近一个月的扫描量"  
+                        },
+                        tooltip: {
+                            show: true
+                        },
+                        calculable: true,
+                        legend: {
+                            data:['浏览量']
+                        },
+                        xAxis : [
+                            {
+                                type : 'category',
+                                data : ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋"]
+                            }
+                        ],
+                        yAxis : [
+                            {
+                                type : 'value'
+                            }
+                        ],
+                        series : [
+                            {
+                                "name":"销量",
+                                "type":"line",
+                                "data":[5, 20, 40, 10, 10]
+                            }
+                        ]
+                    };
+                    
+                     var option1 = {
+                        title: {
+                          'text': "近一个月的扫描量"  
+                        },
+                        tooltip: {
+                            show: true
+                        },
+                        legend: {
+                            data:['浏览量']
+                        },
+                        xAxis : [
+                            {
+                                type : 'category',
+                                data : ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋"]
+                            }
+                        ],
+                        yAxis : [
+                            {
+                                type : 'value'
+                            }
+                        ],
+                        series : [
+                            {
+                                "name":"销量",
+                                "type":"bar",
+                                "data":[5, 20, 40, 10, 10]
+                            }
+                        ]
+                    };
+                    
+                    var option2 = {
+                        title: {
+                          'text': "近一个月的扫描量"  
+                        },
+                        tooltip: {
+                            show: true
+                        },
+                        legend: {
+                            data:['浏览量']
+                        },
+                        xAxis : [
+                            {
+                                type : 'category',
+                                data : ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋"]
+                            }
+                        ],
+                        yAxis : [
+                            {
+                                type : 'value'
+                            }
+                        ],
+                        series : [
+                            {
+                                "name":"销量",
+                                "type":"bar",
+                                "data":[5, 20, 40, 10, 10]
+                            }
+                        ]
+                    };
+
+                    // 为echarts对象加载数据 
+                    myChart.setOption(option); 
+                    myChart1.setOption(option); 
+                    myChart2.setOption(option2); 
+                }
+            );
+    
+     $('.container').scrollspy({ target: '.sidebar-nav' });
+        </script>
+	<script type="text/javascript" src="/static/js/v1/user/analytics.js"></script>
+</body>
+</html>

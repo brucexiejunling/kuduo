@@ -1,0 +1,33 @@
+.main-content {
+	margin-top: 40px;
+}
+
+.download-qr-btn {
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+.alert-box {
+	padding: 20px 25px;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 24px;
+}
+
+.qr-image-wrap {
+	margin: 25px auto 45px;
+	width: 350px;
+	display: block;
+}
+
+.qr-image {
+	width: 100%;
+}
+
+.bdsharebuttonbox .share-label {
+	float: left;
+	font-weight: normal;
+	font-size: 15px;
+	margin: 3px 0;
+	color: #F14A20;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>{$value['videoname']} - {:L('common_app_name')}</title>
+<link rel="stylesheet" type="text/css" href="/static/css/v1/common/mobile.css">
+<link rel="stylesheet" type="text/css" href="/static/css/libs/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/show/video.css">
+</head>
+<body>
+	<div class="video-wrap">
+		<div class="user-info-wrap">
+			<img src="/static/img/user_lost_card.jpg" class="user-head" />
+			<div class="other-info">
+				<span class="user-name">{$value['username']}</span>
+				<span class="video-date">{$value['ctime']}</span>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="video-play-wrap">
+			<div class="close-btn">关闭</div>
+		</div>
+		<div class="video-source-wrap">
+			<img src="/static/img/test/test1.jpg" class="video-image" />
+			<div class="btn-play" data-video="{:C('RESOURCE_DOMAIN')}{$value['videopath']}">
+				<em class="play"></em>
+			</div>
+		</div>
+		<div class="video-description">
+			<div class="less">
+				<i class="less-content">{$value['videodes']|htmlspecialchars_decode}</i>
+				<i class="fa fa-caret-down less-btn"></i>
+			</div>
+			<div class="more">
+				<i class="more-content">{$value['videodes']|htmlspecialchars_decode}</i>
+				<i class="fa fa-caret-left more-btn"></i>
+			</div>
+			<if condition="$value eq null">
+			暂无介绍
+			<else />
+			</if>
+		</div>
+		<div class="video-operate-bar">
+			<if condition="$likePressed neq null">
+				<span class="icon add-like-btn fa fa-thumbs-o-up pressed" code="{$shortcode}"> {$value['userLike']}</span>
+				<else /> 
+				<span class="icon fa fa-thumbs-o-up add-like-btn" code="{$shortcode}"> {$value['userLike']}</span>
+			</if>
+			<div class="icon fa fa-comment-o comment-btn" code="{$shortcode}"> 0</div>
+			<div class="icon fa fa-external-link share-btn" id="share-btn"> 分享</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+		
+	<include file="Common:footer" />
+	<script type="text/javascript" src="/static/js/v1/common/like.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$.customLike($(".add-like-btn"));
+
+			//播放视频
+			$(".video-source-wrap .btn-play").click(function() {
+				var videoSrc = $(this).attr("data-video");
+				$(".video-play-wrap").show();
+				$("<video autoplay='autoplay' class='video-playing' src=" + videoSrc + "></video>").appendTo($(".video-play-wrap"));
+			});
+
+			//关闭播放页面
+			$(".video-play-wrap .close-btn").click(function() {
+				$(".video-play-wrap").hide();
+				$(".video-play-wrap .video-playing").remove();
+			});
+
+			//显示更多介绍内容
+			$(".video-description .less .less-btn").click(function() {
+				$(".video-description .less").hide();
+				$(".video-description .more").show();
+			});
+
+			$(".video-description .more .more-btn").click(function() {
+				$(".video-description .more").hide();
+				$(".video-description .less").show();
+			});
+		});	
+	</script>
+	<script type="text/javascript">
+	    var config = {
+	        "afterRender":function(){
+	           //your code
+	        },
+	        "order":["qqdenglu","sinaweibo"],
+	        "client_id":"GuxKktvYAq96Ar8T09hcAQfn",
+	        "dom_id":"share-btn",
+	        "content":"",
+	        "theme":"web",
+	    };
+	    baidu.socShare.init(config);
+	</script>
+</body>
+</html>

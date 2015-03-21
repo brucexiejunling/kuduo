@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<title>酷多留声贴 - 酷多二维码</title>
+	<link rel="stylesheet" type="text/css"	href="/static/css/v1/common/mobile.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/show/video_card.css?v=20141015">
+</head>
+<body>
+	<div class="video-card-title">您的好友给您留下了一段声音，立即查看吧！</div>
+	<div class="video-playing-wrap">
+		<div class="video-playing-bar"><a href="/api/download?code={$content['videopath']}" class="download-btn" wechat="{$userAgent|is_weixin}">下载</a><span class="close-btn">关闭</span></div>
+	</div>
+	<div class="video-wrap">
+		<if condition="$content['mediaType'] eq mp4">
+		<img class="video-image" src="{:C('RESOURCE_DOMAIN')}{$content['videoimage']}" alt="视频截图"/>
+		<else />
+		<div class="audio-preview"></div>
+		</if>
+		<div class="btn-play" media-type="{$content['mediaType']}" data-video="{:C('RESOURCE_DOMAIN')}{$content['videopath']}">
+			<em class="play"></em>
+		</div>
+	</div>
+	<div class="res-description">
+		<span class="res-word-title">留言</span>
+		<div class="res-word-content">{$content['description']}</div>
+	</div>
+	<include file="Common:footer" />
+	<script type="text/javascript" src="/static/js/v1/show/video_card.js?v=20141015"></script>
+</body>
+</html>

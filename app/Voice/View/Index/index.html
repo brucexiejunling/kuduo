@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>酷多留声贴 - 用声音传情达意</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8" />
+	<meta name="renderer" content="webkit" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="keywords" content="酷多留声贴 酷多二维码 礼物贴纸 有声二维码" />
+	<meta name="description" content="酷多留声贴使用二维码轻松给您的礼物、明信片添加声音视频，传递最真实的情感。" />
+	<link rel="canonical" href="http://v.ikuduo.com/" />
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+		}
+	
+		.clearfix {
+			clear: both;
+			content: " ";
+			height: 0;
+			display: block;
+			visibility: none;
+		}
+	
+		.navbar-fixed-top {
+			position: fixed;
+			width: 100%;
+			padding-top: 20px;
+			top: 0;
+			background: #fff;
+			background: rgba(255,255,255,0.95);
+		}
+	
+		.container {
+			width: 1080px;
+			margin: 0 auto;
+		}
+		
+		.navbar-fixed-top .container:after {
+			clear: both;
+			display: block;
+			height: 0;
+			visibility: none;
+		}
+		
+		.navbar-fixed-top .v-logo {
+			float: left;
+			display: inline-block;
+			padding: 5px 0;
+			border: none;
+		}
+		
+		.navbar-fixed-top .v-logo > img {
+			border: none;
+		}
+		
+		.navbar-fixed-top .nav-menu {
+			list-style: none;
+			float: right;
+		}
+		
+		.navbar-fixed-top .nav-menu > a{
+			display: inline-block;
+			text-decoration: none;
+			color: #444;
+			font: 16px/1.5em microsoft yahei, sans-serif;
+			padding: 15px 15px 20px;
+			margin-right: 20px;
+			-webkit-transition: .3s color,.3s border-color,.3s background-color;
+			-moz-transition: .3s color,.3s border-color,.3s background-color;
+			-ms-transition: .3s color,.3s border-color,.3s background-color;
+			-o-transition: .3s color,.3s border-color,.3s background-color;
+			transition: .3s color,.3s border-color,.3s background-color;
+		}
+		
+		.navbar-fixed-top .nav-menu > a.active {
+			border-bottom: 2px solid #FF6F41;
+			color: #FF6F41;
+		}
+		
+		.navbar-fixed-top .nav-menu > a:hover {
+			color: #FF6F41;
+		}
+		
+		.business-block {
+			position: fixed;
+			top: 150px;
+			right: 0;
+			width: 100px;
+			background: #fff;
+			border-bottom-left-radius: 10px;
+			border-top-left-radius: 10px;
+			padding: 6px 0;
+			border: 1px solid #aaa;
+			border-right: 0;
+			box-shadow: 0px 0px 2px #ddd;
+		}
+		
+		.business-block .buy-now{
+			margin: 10px 10px;
+			text-align: center;
+			padding: 5px;
+			border-radius: 5px;
+			color: #fff;
+			font: 14px/1.5em microsoft yahei;
+			cursor: pointer;
+			background: #FF6520;
+		}
+		
+		.business-block .sell-agency {
+			margin: 20px 10px;
+			text-align: center;
+			padding: 5px;
+			border-radius: 5px;
+			cursor: pointer;
+			font: 14px/1.5em microsoft yahei, sans-serif;
+			background: #33B7E9;
+			color: #fff;
+		}
+		
+		.business-block .business-cooperation {
+			margin: 10px 10px;
+			text-align: center;
+			padding: 5px;
+			border-radius: 5px;
+			color: #fff;
+			cursor: pointer;
+			background: #737373;
+			font: 14px/1.5em microsoft yahei,sans-serif;
+		}
+		
+		.v-banner {
+			background: url(/static/voice/img/home-banner.png) 0 0 no-repeat;
+			background-size: cover;
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/static/voice/img/home-banner.png',  sizingMethod='scale');
+			height: 400px;
+			margin-top: 100px;
+		}
+		
+		.v-introduce .product-title {
+			text-align: center;
+			font: normal 30px/1.5em microsoft yahei;
+			padding-top: 140px;
+			margin-top: -80px;
+		}
+		
+		.v-introduce .product-content {
+			border-bottom: 1px solid #ddd;
+			padding: 40px 0 100px;
+		}
+		
+		.v-introduce .product-content .step-blocker {
+			width: 850px;
+			margin: 0 auto 110px;
+			border-top: 2px solid #41CDF6;
+		}
+		
+		.v-introduce .product-content .step-blocker .step-line {
+			display: block;
+			width: 200px;
+			margin: -15px auto 0;
+			background: #fff;
+			text-align: center;
+		}
+		
+		.v-introduce .product-content .step-blocker .step-line > span {
+			text-align: center;
+			background: #41CDF6;
+			width: 30px;
+			height: 25px;
+			display: inline-block;
+			border-radius: 15px;
+			padding-top: 5px;
+			font: 15px microsoft yahei;
+			color: #fff;
+		}
+		
+		.v-introduce .product-content .step-blocker .step-title {
+			text-align: center;
+			font: 16px/1.5em microsoft yahei;
+			margin-top: 34px;
+			letter-spacing: 3px;
+		}
+		
+		.v-introduce .product-content .step-blocker .step-image {
+			display: block;
+			width: 700px;
+			margin: 45px auto 0;
+		}
+		
+		.v-spec .spec-title {
+			text-align: center;
+			font: normal 30px/1.5em microsoft yahei;
+			padding-top: 140px;
+			margin-top: -80px;
+		}
+		
+		.v-spec .spec-content {
+			border-bottom: 1px solid #ddd;
+			padding: 40px 0 100px;
+		}
+		
+		.v-spec .spec-content .blocker {
+			width: 254px;
+			display: inline-block;
+			margin-right: 10px;
+			text-align: center;
+		}
+		
+		.v-spec .spec-content .blocker .img-container{
+			display: inline-block;
+			width: 162px;
+			height: 162px;
+			margin: 0 20px;
+			background: url(http://apps.bdimg.com/developer/static/1/developers/light/static/home/image/home-advantage_0d84bb72.png) no-repeat;	
+		}
+		
+		.v-spec .spec-content .blocker .s-hot {
+			font: 20px/1.5em microsoft yahei;
+		}
+		
+		.v-spec .spec-content .blocker .s-normal {
+			font: 17px/1.5em microsoft yahei;
+			color: #8B8484;
+			margin: 0 0;
+		}
+		
+		.v-spec .spec-content .blocker .free-download {
+			background-position: 0 0;
+		}
+		
+		.spec-content .blocker .free-login {
+			background-position: 0 0;
+		}
+		
+		.v-spec .spec-content .blocker .save-forever {
+			background-position: -176px 0px;
+		}
+		
+		.spec-content .blocker .free-download {
+			background-position: 0 0;
+		}
+		
+		.v-faq {
+			margin-bottom: 80px;
+		}
+		
+		.v-faq .faq-title {
+			text-align: center;
+			font: normal 30px/1.5em microsoft yahei;
+			padding-top: 140px;
+			margin-top: -80px;
+		}
+		
+		.v-faq .faq-content {
+			padding: 0 0 40px;
+		}
+		
+		.v-faq .faq-content .faq-list {
+			width: 420px;
+			display: inline-block;
+			font-family: microsoft yahei;
+			float: left;
+			margin-right: 70px;
+		}
+		
+		.v-faq .faq-content .faq-a {
+			color: #8A8A8A;
+			font-size: 16px;
+		}
+		
+		/*回到首页*/
+		.scroll-top {
+			display: none;
+			width: 70px;
+			height: 70px;
+			border-radius: 50px;
+			position: fixed;
+			right: 50px;
+			bottom: 50px;
+			cursor: pointer;
+			background-color: #7DB0FF;
+		}
+		
+		.scroll-top > img {
+			width: 48px;
+			margin: 20px auto;
+			display: block;
+		}
+		
+		/*意见反馈*/
+		.feedback-mask {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.5);
+			top: 0;
+			left: 0;
+			display: none;
+		}
+		
+		.feedback-mask .feedback-dialog {
+			background: #fff;
+			width: 490px;
+			height: 290px;
+			margin: 125px auto 0;
+			border-radius: 5px;
+			position: relative;
+		}
+		
+		.feedback-mask .feedback-dialog .dialog-content {
+			width: 254px;
+			height: 240px;
+			margin: 20px 20px 20px;
+			float: left;
+			border-right: 1px solid #ddd;
+		}
+		
+		.feedback-mask .sider-bar {
+			width: 180px;
+			float: left;
+			margin-top: 20px;
+		}
+		
+		.feedback-mask .sider-bar .qq-dialog {
+			width: 120px;
+			margin: 50px auto;
+			display: block;
+			background: #23C53D;
+			text-align: center;
+			padding: 10px 0;
+			color: #fff;
+			border-radius: 8px;
+			font: 15px/1.5em microsoft yahei;
+			text-decoration: none;
+		}
+		
+		.feedback-dialog .close-dialog {
+			position: absolute;
+			right: 5px;
+			top: -4px;
+			font: bold 20px/1.5em microsoft yahei;
+			cursor: pointer;
+		}
+		
+		.feedback-mask .feedback-content {
+			width: 214px;
+			font-size: 13px;
+			padding: 10px;
+			height: 152px;
+			outline: none;
+			border: 1px solid #CCC;
+			padding-right: 10px;
+			font-family: microsoft yahei;
+		}
+		
+		.feedback-mask .feedback-content:focus {
+			border: 1px solid #aaa;
+		}
+		
+		.feedback-mask .feedback-input {
+			border: 1px solid #CCC;
+			padding: 8px 3px;
+			outline: none;
+			width: 228px;
+			font-family: microsoft yahei;
+		}
+		
+		.feedback-mask .feedback-input:focus {
+			border: 1px solid #aaa;
+		}
+		
+		.feedback-mask .feedback-btn {
+			background: #2398C3;
+			padding: 8px 20px;
+			border-radius: 5px;
+			color: #fff;
+			font: 14px/1.5em microsoft yahei,sans-serif;
+			display: inline-block;
+			margin-top: 5px;
+			cursor: pointer;
+		}
+		
+		.feedback-mask .feedback-btn.disabled {
+			opacity: 0.6;
+		}
+		
+		.feedback-mask .feedback-callback {
+			display: none;
+			color: #F32B2B;
+			font: bold 14px/1.5em microsoft yahei;
+			margin-left: 20px;
+		}
+		
+		.feedback-siderbar {
+			position: fixed;
+			left: -5px;
+			top: 40%;
+			background: #FC7811;
+			width: 16px;
+			padding: 10px;
+			color: #fff;
+			font: 15px/1.5em microsoft yahei;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			border: 1px solid #fff;
+			border-left: none;
+			box-shadow: 0 0 4px #000;
+			cursor: pointer;
+		}
+		
+		.feedback-siderbar:hover {
+			left: 0;
+		}
+		
+		
+		/*底部*/
+		.footer {
+			padding: 30px 0;
+			background: #2C2C2C;
+		}
+	
+		.footer .footer-item {
+			margin: 0 auto;
+			text-align: center;
+			color: #F1F1F1;
+		}	
+	
+		.footer .footer-item > a {
+			color: #F1F1F1;
+			font: 12px/1.5em microsoft yahei, sans-serif;
+			text-decoration: none;
+		}
+		
+		.footer-beian {
+			text-align: center;
+			color: #F1F1F1;
+			margin-top: 10px;
+		}
+		
+		.footer-beian > a {
+			color: #f1f1f1;
+			font: 12px/1.5em microsoft yahei;
+			text-decoration: none;
+		}
+	</style>
+	<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+</head>
+<body>
+	<div class="navbar-fixed-top">
+		<div class="container">
+			<a class="v-logo" href="http://v.ikuduo.com/"><img src="/static/img/logo.png"  /></a>
+			<div class="nav-menu">
+				<a href="#" class="active" onclick="try{ga('send', 'event', 'navbar', 'click', 'home')}catch(e){};">首页</a>
+				<a href="#product-title" onclick="try{ga('send', 'event', 'navbar', 'click', 'product')}catch(e){};">产品说明</a>
+				<a href="#spec-title" onclick="try{ga('send', 'event', 'navbar', 'click', 'spec')}catch(e){};">特色介绍</a>
+				<a href="#faq-title" onclick="try{ga('send', 'event', 'navbar', 'click', 'faq')}catch(e){};">常见问题</a>
+			</div>
+		</div>
+	</div>
+	<div class="v-banner"></div>
+	<div class="v-introduce">
+		<h4 class="product-title" id="product-title">产品说明</h4>
+		<div class="product-content container">
+			<div class="step-blocker">
+				<div class="step-line">
+					<span>1</span>
+				</div>
+				<p class="step-title">购买酷多留声贴并贴在礼物或者明信片上</p>
+				<img src="http://static.36kr.com/wp-content/uploads/2012/09/jingdian.jpg" class="step-image" />
+			</div>
+			<div class="step-blocker">
+				<div class="step-line">
+					<span>2</span>
+				</div>
+				<p class="step-title">使用任意二维码工具（如微信、UC浏览器）扫描二维码</p>
+				<img src="http://static.36kr.com/wp-content/uploads/2012/09/jingdian.jpg" class="step-image" />
+			</div>
+			<div class="step-blocker">
+				<div class="step-line">
+					<span>3</span>
+				</div>
+				<p class="step-title">上传声音、视频以及您想表达的任何心情</p>
+				<img src="http://static.36kr.com/wp-content/uploads/2012/09/jingdian.jpg" class="step-image" />
+			</div>
+			<div class="step-blocker">
+				<div class="step-line">
+					<span>4</span>
+				</div>
+				<p class="step-title">把附带酷多留声贴二维码的礼物/明信片寄给远方的Ta</p>
+				<img src="http://static.36kr.com/wp-content/uploads/2012/09/jingdian.jpg" class="step-image" />
+			</div>
+		</div>
+	</div>
+	<div class="v-spec">
+		<h4 class="spec-title" id="spec-title">特色介绍</h4>
+		<div class="spec-content container">
+			<div class="blocker">
+				<div class="img-container free-download"></div>
+				<p class="s-hot">免下载</p>
+				<p class="s-normal">直接扫描使用，省时省流量</p>
+			</div>
+			<div class="blocker">
+				<div class="img-container save-forever"></div>
+				<p class="s-hot">永久保存</p>
+				<p class="s-normal">一次上传，永久有效</p>
+			</div>
+			<div class="blocker">
+				<div class="img-container save-foreverk"></div>
+				<p class="s-hot">便捷下载</p>
+				<p class="s-normal">随心下载您的视频、珍藏情谊</p>
+			</div>
+			<div class="blocker">
+				<div class="img-container free-download"></div>
+				<p class="s-hot">分享</p>
+				<p class="s-normal">感动齐分享</p>
+			</div>
+		</div>
+	</div>
+	<div class="v-faq">
+		<h4 class="faq-title" id="faq-title">常见问题</h4>
+		<div class="faq-content container">
+				<div class="faq-list">
+					<p class="faq-q">Q：使用留声贴需要用你们的app么?</p>
+					<p class="faq-a">A：无需下载任何app，只要您的手机中有二维码扫描软件，就可直接使用，例如：微信、UC浏览器。</p><br />
+					<p class="faq-q">Q：上传的视频、音频你们会保存多久呢？</p>
+					<p class="faq-a">A：用户上传的视频我们将永久保存，不会丢失。</p>
+				</div>
+				<div class="faq-list">
+					<p class="faq-q">Q：会不会很耗流量？</p>
+					<p class="faq-a">A：在保证清晰度的情况下，我们会对您的视频、音频进行压缩，节省流量，同时建议您在WIFI环境下使用。</p><br />
+					<p class="faq-q">Q：我的贴纸可以使用多少次？</p>
+					<p class="faq-a">A：每张贴纸只能上传一次，请谨慎操作，扫描次数不限！</p><br />
+				</div>
+				<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer-item">
+			<a href="http://www.ikuduo.com" target="_blank">酷多二维码</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="http://v.ikuduo.com/about/">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="javascript:void(0)" class="user-feedback" onclick="try{ga('send', 'event', 'sidebar', 'click', 'faq', 2)}catch(e){};">问题反馈</a>
+		</div>
+		<div class="footer-beian">
+			<a href="javascript:void(0);">© 2014 酷多网</a>&nbsp;|&nbsp;
+			<a  href="http://www.miitbeian.gov.cn" target="_blank" class="beian" rel="nofollow">粤ICP备14045459号</a>
+		</div>
+	</div>
+	<!-- 用户反馈 -->
+	<div class="feedback-mask">
+		<div class="feedback-dialog">
+			<div class="close-dialog">×</div>
+				<div class="dialog-content">
+					<textarea class="feedback-content" placeholder="您的建议、吐槽、意见。客服人员将在1-2天内回复您。"></textarea>
+					<input type="text" class="feedback-input" placeholder="您的邮箱或QQ（用于反馈）" />
+					<span class="feedback-btn">发送</span><span class="feedback-callback">提交成功！</span>
+				</div>
+				<div class="sider-bar">
+					<a target="_blank" class="qq-dialog" href="http://wpa.qq.com/msgrd?v=3&uin=877303290&site=qq&menu=yes">客服QQ</a>
+				</div>
+		</div>
+	</div>
+	<!-- 返回顶部 -->
+	<div class="scroll-top" onclick="try{ga('send', 'event', 'button', 'click', 'scrollTop')}catch(e){};"><img src="/static/voice/img/scroll_top.png" alt="回到顶部" title="回到顶部" /></div>
+	<div class="user-feedback feedback-siderbar" onclick="try{ga('send', 'event', 'sidebar', 'click', 'faq', 1)}catch(e){};">意见反馈</div>
+	<div class="business-block">
+		<div class="buy-now">立即购买</div>
+		<div class="sell-agency">销售代理</div>
+		<div class="business-cooperation">商务合作</div>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js?v=20141016"></script>
+	<script>
+		$(function() {
+			/**
+			*   意见反馈功能
+			*/
+			$(".user-feedback").click(function() {
+				//弹窗
+				$(".feedback-mask").show();
+			});
+			
+			//关闭弹窗
+			$(".feedback-dialog .close-dialog").click(function() {
+				$(".feedback-mask").hide();
+			});
+			
+			//发送消息
+			var sending = false;
+			$(".feedback-btn").click(function() {
+				if (sending) {
+					return;
+				} else {
+					sending = true;	
+				}
+				
+				var content = $.trim($(".feedback-mask .feedback-content").val()),
+					  inputValue = $.trim($(".feedback-mask .feedback-input").val());
+				
+				if (content == "") {
+					sending = false;
+					alert("反馈内容不能为空喔！");
+					return;
+				}
+				
+				var _self = $(this);
+				
+				_self.text("提交中...").addClass("disabled");
+				
+				$.post(
+					"/index/feedback/",
+					{value: content, contact: inputValue},
+					function(data) {
+						sending = false;
+						_self.text("发送").removeClass("disabled");
+						$(".feedback-callback").slideDown().delay(2000).slideUp();
+						$(".feedback-mask .feedback-content").val("");
+					}
+				);
+			})
+			
+			//页面滚动事件
+			$(document).scroll(function() {
+				//切换菜单栏
+				var scrollTop = $(document).scrollTop();
+				if (scrollTop > 0 && scrollTop < 300) {
+					$(".navbar-fixed-top .nav-menu a").removeClass("active");
+					$(".navbar-fixed-top .nav-menu a[href=#]").addClass("active");
+				} else if (scrollTop >= 300 && scrollTop < 2700){
+					$(".navbar-fixed-top .nav-menu a").removeClass("active");
+					$(".navbar-fixed-top .nav-menu a[href=#product-title]").addClass("active");
+				} else if (scrollTop > 2700 && scrollTop < 3100) {
+					$(".navbar-fixed-top .nav-menu a").removeClass("active");
+					$(".navbar-fixed-top .nav-menu a[href=#spec-title]").addClass("active");
+				} else if (scrollTop > 3100) {
+					$(".navbar-fixed-top .nav-menu a").removeClass("active");
+					$(".navbar-fixed-top .nav-menu a[href=#faq-title]").addClass("active");
+				} 
+				//回到顶部
+				if (scrollTop > 400) {
+					$(".scroll-top").show();
+				} else {
+					$(".scroll-top").hide();
+				}
+			});
+			
+			$(".scroll-top").click(function() {
+				$(document).scrollTop(0);
+			});
+		});
+	</script>
+	<script>
+ 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-55623693-4', 'auto');
+	  ga('send', 'pageview'); 
+	
+	</script>
+</body>
+</html>

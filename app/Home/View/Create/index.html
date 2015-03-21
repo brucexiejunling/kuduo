@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="renderer" content="webkit" />
+<title>{:L("create_index_website_title")}</title>
+<meta name="keywords" content="酷多二维码 二维码 二维码营销 二维码制作 二维码美化 二维码生成 二维码名片 QRcode 微信二维码 " />
+<meta name="description" content="酷多二维码是国内最好的二维码服务平台，免费提供二维码生成美化的一站式解决方案，更好适应您的二维码营销需求" />
+<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+<link type="text/css" rel="stylesheet" href="/static/css/libs/bootstrap.css" />
+<link type="text/css" rel="stylesheet" href="/static/css/v1/common/global.css" />
+<link type="text/css" rel="stylesheet" href="/static/css/v1/create/create.css" />
+</head>
+<body>
+	<include file="Common:site_header" />
+	<if condition="$tmp_qrcode_undone eq true">
+	<div class="alert alert-danger text-center create-alert-continue">
+		您有未完成提交的二维码，是否继续编辑？
+		<a class="continue-btn" href="/create/{$_SESSION['create_qrcode_type']}?rel=create_continue">继续</a>
+		<a class="cancel-btn" id="cancel-btn" href="javascript:void(0)">取消</a>
+	</div>
+	</if>
+	<div class=" site-main">
+	<div class="container">
+		<div class="qrcode-step">
+			<div class="step current-step">1. 选择二维码类型</div>
+			<div class="step">2. 编辑二维码内容</div>
+			<div class="step">3. 美化生成二维码</div>
+		</div>
+		<div class="col-lg-3 select-qrcode-type-box">
+				<div class="select-qrcode-type-title">选择二维码类型</div>
+				<div class="select-qrcode-type-list">
+					<div class="type-heading" data-item="all">
+						<span class="title">全部</span>
+						<span class="icons"></span>
+						<div class="type-list-number">7</div>
+					</div>
+					<div class="type-content-wrap"  data-for-item="all">
+						<div class="type-content"><a href="/create/text/" class="title">文本</a><span class="icons"></span></div>
+						<div class="type-content"><a href="/create/url/" class="title">网址</a><span class="icons"></span></div>
+						<div class="type-content"><a href="/create/wifi/" class="title">WIFI</a><span class="icons"></span></div>
+						<div class="type-content"><a href="/create/file/" class="title">文件</a><span class="icons"></span></div>
+					<!-- 	<div class="type-content"><a href="/create/mp/" class="title">名片</a><span class="icons"></span></div> -->
+						<div class="type-content"><a href="/create/video/" class="title">视频</a><span class="icons"></span></div>
+						<div class="type-content"><a href="/create/phone/" class="title">电话</a><span class="icons"></span></div>
+						<div class="type-content"><a href="/create/message/" class="title">短信</a><span class="icons"></span></div>
+					</div>
+					<div class="type-heading" data-item="business">
+						<span class="title">企业</span>
+						<span class="icons"></span>
+						<div class="type-list-number">4</div>
+					</div>
+					<div class="type-content-wrap"  data-for-item="business">
+						<div class="type-content"><a href="/create/url/" class="title">网址</a><span class="icons"></span></div>
+						<div class="type-content"><a href="/create/file/" class="title">文件</a><span class="icons"></span></div>
+						<div class="type-content"><a href="/create/wifi/" class="title">WIFI</a><span class="icons"></span></div>
+				<!-- 		<div class="type-content"><a href="/create/mp/" class="title">名片</a><span class="icons"></span></div> -->
+						<div class="type-content"><a href="/create/video/"  class="title">视频</a><span class="icons"></span></div>
+					</div>
+					<div class="type-heading" data-item="personal">
+						<span class="title">个人</span>
+						<span class="icons"></span>
+						<div class="type-list-number">6</div>
+					</div>
+					<div class="type-content-wrap"  data-for-item="personal">
+						<div class="type-content"><a href="/create/text/" class="title">文本</a><span class="icons"></span></div>
+						<div class="type-content"><a href="/create/url/" class="title">网址</a><span class="icons"></span></div>
+					<!-- 	<div class="type-content"><a href="/create/mp/" class="title">名片</a><span class="icons"></span></div> -->
+						<div class="type-content"><a href="/create/video/" class="title">视频</a><span class="icons"></span></div>
+						<div class="type-content"><a href="/create/file/" class="title">文件</a><span class="icons"></span></div>
+						<div class="type-content"><a href="/create/phone/" class="title">电话</a><span class="icons"></span></div>
+						<div class="type-content"><a href="/create/message/" class="title">短信</a><span class="icons"></span></div>
+					</div>
+				</div>
+		</div>
+		<div class="col-lg-9">
+			<a href="/create/text/" class="qr-type-wrap" data-class="all personal  common"> 
+				<span class="design-title">文本</span> 
+				<img src="/static/img/phone_hover.png" class="type-image-hover"/>
+				<img class="design-image" src="/static/img/text/text_1.png" />
+			</a> 
+			<a href="/create/url/" class="qr-type-wrap" data-class="all personal business common">
+				<span class="design-title">网址</span>
+				<img src="/static/img/phone_hover.png" class="type-image-hover"/>
+				<img class="design-image" src="/static/img/url/url_1.png" />
+			</a> 
+			<a href="/create/wifi/" class="qr-type-wrap" data-class="all business common">
+				<span class="design-title">WIFI</span>
+				<img src="/static/img/phone_hover.png" class="type-image-hover"/>
+				<img class="design-image" src="/static/img/wifi/wifi_1.png" />
+			</a>
+			<a href="/create/file/" class="qr-type-wrap" data-class="all business common">
+				<span class="design-title">文件</span>
+				<img src="/static/img/phone_hover.png" class="type-image-hover"/>
+				<img class="design-image" src="/static/img/file/file_1.png" />
+			</a> 
+		<!-- 	<a href="/create/mp/" class="qr-type-wrap" data-class="all business personal common"> 
+				<span class="design-title">名片</span>
+				<img src="/static/img/phone_hover.png" class="type-image-hover"/>
+				<img class="design-image" src="/static/img/file/file_1.png" />
+			</a> -->
+			<a href="/create/video/" class="qr-type-wrap"  data-class="all business personal common">
+				<span class="design-title">视频</span> 
+				<img src="/static/img/phone_hover.png" class="type-image-hover"/>
+				<img class="design-image" src="/static/img/video/video_1.png" />
+			</a>
+			<a href="/create/phone/" class="qr-type-wrap"> <span
+				class="design-title">电话</span> 
+				<img src="/static/img/phone_hover.png" class="type-image-hover"/>
+				<img class="design-image" src="/static/img/phone/phone_1.png" />
+			</a> 
+			 <a href="/create/message/" class="qr-type-wrap"> <span
+				class="design-title">短信</span> 
+				<img src="/static/img/phone_hover.png" class="type-image-hover"/>
+				<img class="design-image" src="/static/img/message/message_1.png" />
+			</a> 
+			<!-- <a href="/create/weibo/" class="qr-type-wrap">
+				<span class="design-title">微信</span>
+				<img class="design-image" src="/static/img/design/iphone4S_black.png"  />
+			</a>
+			<!-- <a href="/create/image/" class="qr-type-wrap"> <span
+				class="design-title">图片</span> <img class="design-image"
+				src="/static/img/design/iphone4S_black.png" />
+			</a> <a href="/create/audio/" class="qr-type-wrap"> <span
+				class="design-title">音频</span> <img class="design-image"
+				src="/static/img/design/iphone4S_black.png" />
+			</a> -->
+		</div>
+		</div>
+	</div>
+	<include file="Common:site_footer" />
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+	<script type="text/javascript" src="/static/js/v1/create/index.js"></script>
+</body>
+</html>

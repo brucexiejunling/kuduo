@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta content="telephone=no" name="format-detection" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<title>酷多失物贴 - 酷多二维码</title>
+<link rel="stylesheet" type="text/css"	href="/static/css/v1/common/mobile.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/show/common.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/show/lost_card.css?v=20141024">
+</head>
+<body>
+	<div class="main-content">
+		<div class="katie-alert">提示：请尽快通过下面的联系方式告诉失主如何领回物品吧，TA一定特着急。好人一生平安~</div>
+		<div class="katie-user">
+			<div class="user-default-head">
+				<img class="user-image" src="/static/img/user_lost_card.jpg" />
+				<div class="user-info">
+					<div class="user-name">{$value['nickname']}</div>
+					<if condition="$value['phone'] neq null">
+					<div class="user-phone">{$value['phone']}</div>
+					</if>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="thing-name-wrap">
+				<span class="thing-name"><span style="font-weight:normal;">失物名称：</span>{$value['thingname']}</span>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="katie-intro">
+			<div class="katie-title-label">物主描述</div>
+			<div class="katie-intro-content">{$value['introduce']}</div>
+		</div>
+		<if condition="$_SESSION['katie_owner_uid'] neq 0">
+		<div class="katie-comment-wrap">
+			<div class="comment-send-box">
+				<input placeholder="免费留言告诉Ta如何拿回失物..."
+				class="form-control katie-comment-area"
+				id="katie-comment-area" /> 
+				<span class="btn btn-primary katie-comment-btn" id="katie-comment-btn">发送</span>
+			</div>
+			<div class="comment-finish-box">
+				<span class="btn btn-primary re-comment-btn" id="re-comment-btn">继续留言</span>
+			</div>
+		</div>
+		</if>
+	</div>
+	<include file="Common:footer" />
+	<script type="text/javascript" src="/static/js/v1/show/lost_card.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+.short-url-state {
+	
+}
+
+.short-url-state .title {
+	font-size: 20px;
+}
+
+.short-url-state .state-block {
+	display: inline-block;
+	margin-right: 100px;
+}
+
+.create-short-url {
+	border-bottom: 1px solid #ddd;
+	padding: 10px;
+	font-size: 18px;
+}
+
+.create-short-url-setting {
+	border: 1px solid #ddd;
+	margin-top: 5px;
+	padding: 10px;
+}

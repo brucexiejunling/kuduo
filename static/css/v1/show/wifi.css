@@ -1,0 +1,138 @@
+.app-navbar {
+	position: relative;
+	background: #fff;
+	height: 44px;
+	border-bottom: 1px solid #E5E5E5;
+	text-align: center;
+	width: 100%;
+}
+
+.user-login {
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	color: #333;
+	text-decoration: none;
+	display: inline-block;
+	float: right;
+	font-size: 16px;
+}
+
+.app-navbar .short-text {
+	display: inline-block;
+	font-size: 18px;
+	margin-top: 10px;
+	max-width: 180px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.wifi-content {
+	text-align: center;
+	background: url(/static/img/wifi/wifi_bg.png) no-repeat 0 0;
+}
+
+.wifi-content .app-navbar {
+	background: transparent;
+	border-bottom: transparent;
+}
+
+.wifi-content .app-navbar .user-login {
+	color: #fff;
+}
+
+.wifi-content .app-navbar .short-text {
+	color: #fff;
+}
+
+.wifi-content .shop-logo {
+	display: block;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	border-radius: 60px;
+	border: 3px solid #fff;
+	float: left;
+	margin: 40px 0 0 35px;
+}
+
+.wifi-content .shop-logo > img {
+	width: 110px;
+	height: 110px;
+	margin-top: -5px;
+	margin-left: -5px;
+}
+
+
+.wifi-content .wifi-account {
+	float: left;
+	margin: 58px 0 0 20px;
+}
+	
+.wifi-content .wifi-value {	
+	max-width: 170px;
+	display: block;
+	font-size: 16px;
+	text-align: left;
+	color: #fff;
+	padding: 5px 0 5px 0px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.wifi-content .wifi-password {	
+	max-width: 170px;
+	display: block;
+	font-size: 16px;
+	text-align: left;
+	color: #fff;
+	padding: 5px 0 5px 0px;
+	margin-top: 10px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.wifi-content .shop-name {
+	color: #fff;
+	margin-top: 60px;
+	padding: 12px 0 12px 18px;
+	text-align: left;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.shop-name .shop-name-label {
+	width: 210px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: block;
+	float: left;
+}
+
+.shop-information .tab-wrap {
+	padding: 0 15px;
+	text-align: left;
+}
+
+.shop-information .tab-news-btn{
+	border-bottom: 2px solid #ddd;
+	border-bottom: 2px solid #A52C5D;
+	display: inline-block;
+	padding: 12px 24px;
+	color: #777;
+	font-size: 15px;
+}
+
+.shop-information .news-content {
+	margin-top: 10px;
+	padding: 0 12px 20px;
+	text-align: left;
+	word-break: break-all;
+}
+
+.add-like-btn.pressed {
+	color: #f00;
+}

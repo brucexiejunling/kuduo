@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{:L("register_website_title")}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="用户登录 酷多二维码登陆 二维码登录 免费 二维码制作 二维码营销" />
+	<meta name="description" content="欢迎免费注册酷多二维码，酷多二维码 -全国最好的一站式二维码服务平台。提供免费的二维码生成美化服务，为您的二维码营销保驾护航。" />
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/common/mobile.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/login/register.css?v=20141024">
+</head>
+<body>
+	<div class="navbar-header app-navbar" id="app-navbar">
+		<div class="go-back" id="go-back"></div>
+		<span class="short-text">新用户注册</span>
+	</div>
+	<!--手机号码注册start-->
+	<div class="register-form-phone">
+		<span class="go-phone-method register-method focused">手机号码注册</span>
+		<span class="go-mail-method register-method">邮箱注册</span>
+		<div class="form-group">
+			<input class="form-control phone-number input-sm" id="phone-number"
+				type="text" placeholder="手机号码">
+		</div>
+		<div class="form-group">
+			<input class="form-control user-password input-sm" id="user-password"
+				type="password" placeholder="设置6-16位的密码">
+		</div>
+		<div class="form-group">
+			<input class="form-control phone-code input-sm" id="phone-code"
+				type="text" placeholder="激活码"> <span
+				class="btn btn-success btn-sm send-phone-code" id="send-phone-code">发送激活码</span>
+			<div class="clearfix"></div>
+		</div>
+		<div class="alert alert-danger alert-sm register-alert-box hide"></div>
+		<div class="form-group register-next-box">
+			<span class="btn btn-primary register-next" id="register-next-phone">立即注册</span>
+		</div>
+	</div>
+	<!--手机号码注册end-->
+
+	<!--邮箱注册start-->
+	<div class="register-form-mail">
+		<span class="go-phone-method register-method">手机号码注册</span>
+		<span class="go-mail-method register-method focused">邮箱注册</span>
+		<div class="form-group">
+			<input class="form-control email-input input-sm" id="email-input"
+				type="text" placeholder="电子邮箱">
+		</div>
+		<div class="form-group">
+			<input class="form-control user-password-mail input-sm"
+				id="user-password-mail" type="password" placeholder="设置6-16位的密码">
+		</div>
+		<div class="alert alert-danger alert-sm register-alert-box hide"></div>
+		<div class="form-group register-next-box">
+			<span class="btn btn-primary register-next" id="register-next-email">立即注册</span>
+		</div>
+	</div>
+	<!--邮箱注册end-->
+	<include file="common:footer" />
+	<script type="text/javascript" src="/static/js/libs/zepto.js"></script>
+	<script type="text/javascript" src="/static/js/v1/login/register.js?v=20141025"></script>
+</body>
+</html>

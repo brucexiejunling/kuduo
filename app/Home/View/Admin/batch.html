@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>失物贴管理 - 后台管理</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+	<link type="text/css" rel="stylesheet"	href="/static/css/libs/united.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/common/global.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/admin/common.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/admin/batch.css" />
+	<link type="text/css" rel="stylesheet"	href="/static/js/libs/jqcrop/css/jquery.Jcrop.css" />
+	<link type="text/css" rel="stylesheet" href="/static/js/libs/jquery.color/jquery.color.css" />
+</head>
+<body>
+	<include file="Admin:header" />
+	<div class="container main-content">
+			<div>
+				<div class="qr-edit-title clearfix">
+					<span class="btn btn-primary btn-lg btn-preview pull-right" id="btn-preview">预览</span>
+				</div>
+			</div>
+			<div class="modify-edit-detail-side">
+				<div class="setting-item clearfix">
+					<strong class="item-title">模式</strong>
+					<span class="qrcode-render-type" render="normal">传统模式</span>
+					<span class="qrcode-render-type selected" render="enhance">增强模式</span>
+				</div>
+				<div class="setting-item clearfix" data-bind="basic"  data-for="materialize bginsert">
+					<strong class="item-title">特效</strong>
+					<span class="qrcode-advanced-type" advanced-render="materialize">图案素材</span>
+					<span class="qrcode-advanced-type" advanced-render="bginsert">背景嵌入</span>
+				</div>
+
+				<div class="setting-item clearfix">
+					<strong class="item-title">图案</strong>
+					<div class="item-content">
+						<div class="btn btn-sm btn-white material-image-upload">
+							<div class="material-image-upload-label">本地上传</div>
+							<div class="material-image-uploading"><img src="/static/img/loading.gif">上传中...</div>
+							<input type="file" id="material-image-src" name="material-image-src" class="material-image-src" />
+						</div>
+						<!-- <div class="select-from-image-library" id="select-from-image-library" title="从图库选择">图库</div> -->
+						<div class="material-image-reset" id="material-image-reset" title="重置"></div>
+					</div>
+				</div>
+
+				<div class="setting-item clearfix">
+					<strong class="item-title">背景</strong>
+					<div class="item-content">
+						<div id="bg-color-select" title="二维码背景" class="bg-color-select">
+							<span style="display: inline-block; background: rgb(255, 255, 255); width: 30px; height: 30px"></span>
+						</div>
+						<div class="btn btn-sm btn-white bg-image-upload">
+							<div class="bg-image-upload-label">本地上传</div>
+							<div class="bg-image-uploading"><img src="/static/img/loading.gif">上传中...</div>
+							<input type="file" id="bg-image-src" name="bg-image-src" class="bg-image-src" />
+						</div>
+						<!-- <div class="select-from-image-library" id="select-from-image-library" title="从图库选择">图库</div> -->
+						<div class="bg-image-reset" id="bg-image-reset" title="重置"></div>
+					</div>
+				</div>
+
+				<div class="setting-item clearfix">
+					<strong class="item-title">前景</strong>
+					<div class="item-content">
+						<div id="front-color-select" class="front-color-select">
+							<span style="display: inline-block; background: rgb(0, 0, 0); width: 30px; height: 30px"></span>
+						</div>
+					</div>
+				</div>
+				<div class="setting-item clearfix">
+					<strong class="item-title">码眼形状</strong>
+					<div class="item-content">
+						<div class="code-eye-list">
+							<div class="code-eye-type-item code-eye-rounded">rounded</div>
+							<div class="code-eye-type-item code-eye-square">square</div>
+						</div>
+					</div>
+				</div>
+				<div class="setting-item clearfix">
+					<strong class="item-title">码眼颜色</strong>
+					<div class="item-content">
+						<div id="code-eye-color-select" class="code-eye-color-select" title="码眼的颜色">
+							<span style="display: inline-block;background: #000; width: 25px; height: 25px"></span>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="setting-item clearfix" data-bind="codeeye"  data-for="enhance">
+					<strong class="item-title">内点形状</strong>
+					<div class="item-content">
+						<div class="dot-fill-list">
+							<div class="dot-fill-type-item dot-fill-circle">rounded</div>
+							<div class="dot-fill-type-item code-eye-square">square</div>
+						</div>
+					</div>
+				</div> -->
+				<div class="setting-item clearfix">
+					<strong class="item-title">Logo</strong>
+					<div class="item-content">
+						<div class="logo-upload-wrap btn btn-white">
+							<div class="logo-upload-label">本地上传</div>
+							<div class="logo-uploading"><img src="/static/img/loading.gif">上传中...</div>
+							<input type="file" id="logo-upload-src" name="logo-upload-src" class="logo-upload-src" />			
+						</div>
+						<div class="logo-upload-reset" id="logo-upload-reset" title="重置"></div>
+					</div>
+				</div>
+				<div class="setting-item clearfix">
+					<strong class="item-title">文字</strong>
+					<div class="item-content">
+						<input type="text" placeholder="输入文字..." class="form-control qrcode-text-insert" id="qrcode-text-insert" />
+					</div>
+				</div>
+				<div class="setting-item clearfix">
+					<strong class="item-title">样式</strong>
+					<div class="item-content">
+						<div class="text-insert-font-color" title="文字颜色">
+							<span style="display: inline-block; background: rgb(0, 0, 0); width: 30px; height: 30px"></span>
+						</div>
+						<!-- div class="text-insert-background-color" title="背景颜色">
+							<span style="display: inline-block; background: rgb(255, 255, 255); width: 30px; height: 30px"></span>
+						</div-->
+						<div class="text-insert-font-style" title="加粗"></div>
+					</div>
+				</div>
+
+				<div class="setting-item clearfix" >
+					<strong class="item-title">字号</strong>
+					<div class="item-content">
+						<select class="text-insert-font-size" title="字号">
+							<option value="12">12px</option>
+							<option value="13">13px</option>
+							<option value="14" selected>14px</option>
+							<option value="16">16px</option>
+							<option value="18">18px</option>
+							<option value="20">20px</option>
+							<option value="24">24px</option>
+						</select>
+						
+					</div>
+				</div>
+				<!-- <div class="setting-item clearfix" data-bind="insert">
+					<strong class="item-title">字体</strong>
+					<div class="item-content">
+						<select class="text-insert-font-family">
+							<option>冬青黑体</option>
+						</select>
+					</div>
+				</div> -->
+				
+				<div class="setting-item clearfix">
+					<strong class="item-title">边距</strong>
+					<div class="item-content">
+						<select class="qrcode-margin" id="qrcode-margin">
+							<option value="0">0</option>
+							<option value="1" selected="true" >1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+						</select>
+					</div>
+				</div>
+				<div class="setting-item clearfix">
+					<strong class="item-title">容错率</strong>
+					<div class="item-content">
+						<div class="qrcode-error-level">
+							<label><input type="radio" name="error-level" value="L"/>7%</label>
+							<label class="selected"><input type="radio" name="error-level" value="M"/>15%</label>
+							<label><input type="radio" name="error-level" value="Q"/>25%</label>
+							<label><input type="radio" name="error-level" value="H"/>30%</label>
+						</div>
+					</div>
+				</div>
+				<div class="setting-item clearfix">
+					<strong class="item-title">渐变颜色</strong>
+					<div class="item-content">
+						<div id="gradient-color" title="渐变颜色" class="gradient-color">
+							<span style="display: inline-block; background: rgb(0, 0, 0); width: 30px; height: 30px"></span>
+						</div>
+					</div>
+				</div>
+				<div class="setting-item clearfix">
+					<strong class="item-title">渐变方向</strong>
+					<div class="item-content">
+						<select class="gradient-direction" id="gradient-direction">
+							<option value="center">中心渐变</option>
+							<option value="slash">斜线渐变</option>
+							<option value="back-slash">反斜线渐变</option>
+							<option value="vertical">垂直渐变</option>
+							<option value="horizontal">水平渐变</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="upload-image-wrap"
+				id="upload-image-wrap">
+				<img id="render-content" class="render-content" src="/static/img/default_bg_1.png" />
+				<span class="qrcode-text-insert-preview" id="qrcode-text-insert-preview"></span>
+				<img id="logo-image-preview" class="logo-image-preview"/>
+				<img id="image-preview-mask" class="image-preview-mask" />
+				<div class="loading-mask">
+					<div class="loading-wrap">
+						<img src="/static/img/indicator_circle_thickbox.gif" />
+						<span class="loadding-text">正在生成...</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="qr-batch-btn">
+			<select class="form-control batch-type" id="qr-batch-type">
+			  <option value="lost_card" selected>失物贴</option>
+			  <option value="video_card">留声贴</option>
+			</select>
+			<input type="text" class="form-control batch-codename" id="batch-codename" placeholder="代号：年_月_日_张数_批次_小批次" />
+			<input type="text" maxlength="4" class="form-control batch-amount" id="batch-amount" placeholder="数量 1000 张" />
+			<span class="btn btn-danger btn-lg btn-batch" id="btn-batch">批量生成</span>
+				
+		</div>
+	</div>
+	<include file="Admin:notification" />
+
+	<script src="/static/js/libs/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/libs/jqcrop/js/jquery.Jcrop.js"></script>
+	<script type="text/javascript" src="/static/js/libs/jquery.color/jquery.color.js"></script>
+	<script type="text/javascript" src="/static/js/libs/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="/static/js/libs/jquery.slider/jquery.slider-1.0.0.js"></script>
+	<script type="text/javascript" src="/static/js/v1/admin/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/js/v1/admin/common.js"></script>
+	<script type="text/javascript" src="/static/js/v1/admin/batch.js?v=20141016"></script>
+</body>
+</html>

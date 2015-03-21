@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>短地址生成 - 后台管理</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/static/css/libs/united.css">
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/common/global.css" />
+	<link rel="stylesheet" href="/static/css/v1/admin/common.css">
+	<link rel="stylesheet" href="/static/css/v1/admin/shorturl.css">
+</head>
+<body>
+	<include file="Admin:header" />
+	<div class="container main-content">
+			<div class="short-url-panel">
+				<div class="short-url-state">
+					<h2 class="title">短地址使用情况</h2>
+					<table>
+					<th>
+						<tr>
+							<th class="state-title">发放总数</th>
+							<th class="state-title">已使用</th>
+							<th class="state-title">未使用</th>
+							<th class="state-title">已锁定</th>
+						</tr>
+						<tr>
+							<td class="state-statics">{$state['total']}</td>
+							<td class="state-statics">{$state['used']}</td>
+							<td class="state-statics">{$state['unused']}</td>
+							<td class="state-statics">{$state['locked']}</td>
+						</tr>
+					</th>
+					</table>
+				</div>	
+			</div>
+			<div class="create-short-url">
+				<h3>生成短地址</h3>
+				<div class="form-inline create-short-url-setting">
+					<div class="alert alert-sm alert-warning">5位短地址条数最大为3.8亿，6位短地址条数最大为190亿。批量生成时会卡顿，属正常现象。一次性不建议生成超过10W条。</div>
+					<div class="form-group">
+						<label for="short-url-create-number">生成的条数（10的倍数）</label>
+						<input type="text" value="10000" class="form-control short-url-create-number"  id="short-url-create-number"/>
+					</div>
+					<div class="form-group">
+						<label for="short-url-create-length">短地址长度</label>
+						<input type="text" value="4" class="form-control short-url-create-length" id="short-url-create-length" />
+					</div>
+					<div class="form-group">
+						<span class="btn btn-primary create-short-url-btn" id="create-short-url-btn">确认</span>
+					</div>
+				</div>
+			</div>
+	</div>
+	<include file="Admin:notification" />
+	
+	<script type="text/javascript" src="/static/js/libs/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/v1/admin/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/js/v1/admin/common.js"></script>
+	<script type="text/javascript" src="/static/js/v1/admin/shorturl.js?v=20141025"></script>
+</body>
+</html>

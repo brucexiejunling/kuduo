@@ -1,0 +1,109 @@
+.qr-edit-wrap {
+	padding: 0 0 10px;
+	border-bottom: 1px solid #EBEBEB;
+}
+
+.qr-edit-title {
+	float: left;
+	height: 0;
+	width: 0;
+	font-size: 0;
+	text-indent: -9999px;
+}
+
+.site-content {
+	margin: 40px auto;
+	min-height: 660px;
+}
+
+.qr-edit-image {
+	margin-left: 140px;
+}
+
+.qr-preview {
+	position: relative;
+}
+
+.btn-go-back {
+	display: block;
+	margin-right: 30px;
+	float: right;
+	border: none;
+	border-radius: 5px;
+	color: #3DC1FF;
+}
+
+.btn-go-back:hover {
+	color: #00ACFD;
+}
+
+.btn-next-render {
+	display: block;
+	float: right;
+	border-radius: 5px;
+}
+
+.qr-preview .phone-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+}
+
+.form-group label {
+	margin-bottom: 15px;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+.form-group {
+	margin-bottom: 30px;
+}
+
+.custom-checkbox {
+	background: url(/static/img/sprite-icons.png) -10px -291px no-repeat;
+	width: 22px;
+	height: 22px;
+	display: block;
+	float: left;
+	margin: 2px 0 0 8px;
+	cursor: pointer;
+}
+
+.custom-checkbox.checked {
+	background: url(/static/img/sprite-icons.png) -10px -248px no-repeat;
+}
+
+.short-url-label {
+	display: block;
+	float: left;
+}
+
+.short-url-label .icon {
+	width: 16px;
+	background: url(/static/img/sprite-icons.png) -9px -333px no-repeat;
+	height: 16px;
+	display: inline-block;
+	margin-left: 5px;
+}
+
+
+.qrcode-step {
+	width: 900px;
+	margin: 40px auto 30px;
+	background: #ddd;
+	border-radius: 30px;
+}
+
+.qrcode-step .step{
+	display: inline-block;
+	width: 297px;
+	text-align: center;
+}
+
+.qrcode-step .step.current-step {
+	color: #fff;
+	background: #22C2EB;
+	padding: 10px 0;
+	border-radius: 28px;
+}

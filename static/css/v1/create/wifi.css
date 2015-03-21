@@ -1,0 +1,146 @@
+.wifi-btn-wrap {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+
+.wifi-btn-wrap > span {
+	padding: 0 10px;
+	color: #bbb;
+}
+
+.wifi-btn-wrap > span.selected {
+	font-weight: bold;
+	color: #000;
+	border-bottom: 3px solid #C91C1C;
+	padding-bottom: 11px;
+}
+
+.wifi-power-content {
+	
+}
+
+.logo-upload-wrap, .logo-upload-done {
+	position: relative;
+	height: 50px;
+}
+
+.logo-upload-done {
+	display: none;
+}
+
+
+.logo-upload-wrap .logo-btn {
+	display: block;
+	position: absolute;
+	width: 350px;
+	padding: 6px 0;
+	border: 1px dashed #5890DE;
+	color: #5890DE;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0px 0px 1px #ddd;
+}
+
+.logo-upload-wrap .logo-input {
+	position: absolute;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+.logo-upload-done .logo-name {
+	float: left;
+	max-width: 400px;
+	display: inline-block;
+	outline: none;
+	border: none;
+	margin-right: 40px;
+	border-bottom: 1px solid #ddd;
+	padding: 6px 20px;
+	font-weight: bold;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.logo-upload-done .logo-reupload-btn {
+	float: left;
+	border: 1px solid #FF581E;
+	padding: 6px 30px;
+	display: inline-block;
+	border-radius: 5px;
+	color: #FF581E;
+	cursor: pointer;
+}
+
+.wifi-news-editor {
+	width: 100%;
+}
+
+.wifi-normal-content {
+	display: none;
+}
+
+
+.wifi-name-preview {
+	position: absolute;
+	top: 202px;
+	left: 206px;
+	max-width: 118px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #fff;
+}
+
+.wifi-password-preview {
+	position: absolute;
+	top: 245px;
+	left: 206px;
+	max-width: 120px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #fff;
+}
+
+.shop-name-preview {
+	position: absolute;
+	top: 331px;
+	left: 70px;
+	max-width: 175px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #fff;
+}
+
+.shop-news-preview {
+	position: absolute;
+	top: 422px;
+	left: 52px;
+	color: #333;
+	width: 278px;
+	word-break: break-all;
+	height: 92px;
+	overflow-y: auto;
+}
+
+.shop-logo-preview {
+	position: absolute;
+	top: 186px;
+	left: 50px;
+	border-radius: 60px;
+	border: 3px solid #fff;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+}
+
+.shop-logo-preview > img {
+	width: 105px;
+	height: 105px;
+	margin: -5px 0 0 -5px;
+	background: #fff;
+}

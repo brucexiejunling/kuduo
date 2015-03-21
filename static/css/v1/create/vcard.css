@@ -1,0 +1,276 @@
+div.edit-type-btn {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+}
+
+div.edit-type-btn > span {
+	padding: 0 20px;
+	color: #bbb;
+	cursor: pointer;
+}
+
+div.edit-type-btn > span.selected {
+	font-weight: bold;
+	color: #000;
+	border-bottom: 3px solid #C91C1C;
+	padding-bottom: 11px;
+}
+
+div.edit-company-wrap > div, div.edit-personal-wrap > div {
+	position: relative;
+	margin: 30px 0px;
+}
+
+div.edit-company-wrap i, div.edit-personal-wrap i {
+	position: absolute;
+	top: 12px;
+	left: 76%;
+}
+
+div.upload-cover-wrap, div.upload-logo-wrap, div.upload-avatar-wrap {
+	float: left;
+	height: 30px;
+}
+
+div.upload-cover-wrap > span, div.upload-logo-wrap > span, div.upload-avatar-wrap > span {
+	float: left;
+	width: 100px;
+	margin-right: 20px;
+}
+
+span.upload-file-wrap {
+	position: relative;
+}
+
+span.upload-file-wrap span {
+	position: absolute;
+	top: -5px;
+	width: 100px;
+	padding: 6px 0;
+	border: 1px dashed #5890DE;
+	color: #5890DE;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0px 0px 1px #ddd;
+}
+
+span.upload-file-wrap input {
+	position: absolute;
+	top: -5px;
+	left: 10px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+div.upload-done {
+	float: left;
+	margin-top: 20px!important;
+}
+
+div.upload-done div.image-name {
+	float: left;
+	max-width: 400px;
+	display: inline-block;
+	outline: none;
+	border: none;
+	margin-right: 40px;
+	border-bottom: 1px solid #ddd;
+	padding: 6px 20px;
+	font-weight: bold;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+div.upload-done span {
+	float: left;
+	border: 1px solid #FF581E;
+	padding: 6px 30px;
+	display: inline-block;
+	border-radius: 5px;
+	color: #FF581E;
+	cursor: pointer;
+}
+
+div.edit-company-wrap input, div.edit-personal-wrap input {
+	width: 80%;
+	height: 35px;
+	padding: 5px;
+	padding-right: 30px;
+}
+
+div.edit-company-wrap div.company-product textarea{
+	margin-top: 10px;
+	padding: 5px;
+	width: 80%;
+	height: 90px;
+	outline: none;
+	resize: none;
+	font-size: 14px;
+}
+
+div.card-preview-wrap {
+	position: absolute;
+	top: 0;
+	width: 220px;
+	height: 390px;
+}
+
+div.card-content {
+	position: absolute;
+	top: 87px;
+	left: 22px;
+	width: 236px;
+	height: 315px;
+	padding-right: 15px;
+	overflow: overlay;
+	border: solid 1px #e0e6e7;
+	background: #F3F3F3;
+}
+
+div.personal-info {
+	margin-top: 40px;
+}
+
+div.card-header {
+	width: 100%;
+	height: 80px;
+	position: relative;
+	background: #63C0EC;
+	box-shadow: 0px 2px 2px #9B9B9B;
+	-webkit-box-shadow: 0px 2px 2px #9B9B9B;
+	-ms-box-shadow: 0px 2px 2px #9B9B9B;
+	-moz-box-shadow: 0px 2px 2px #9B9B9B;
+	white-space: normal;
+	word-break: break-all;
+}
+
+div.card-header img.card-cover {
+	width: 100%;
+	height: 100%;
+}
+
+div.card-header img.company-logo {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	right: 15px;
+	bottom: -20px;
+	border: solid 2px #00E0CE;
+}
+
+div.card-header img.person-avatar {
+	float: left;
+	width: 60px;
+	height: 60px;
+	margin-top: 5px;
+	margin-left: 10px;
+	border: solid 2px #00c09b;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-moz-border-radius: 50%;
+}
+
+div.card-header span.company-name {
+	position: absolute;
+	top: 20px;
+	left: 10px;
+	color: #FFF;
+	font-weight: bold;
+	width: 140px;
+	font-size: 16px;
+}
+
+div.card-header div.person-name {
+	padding-top: 12px;
+}
+
+div.card-header div.person-job {
+	padding-top: 2px;
+}
+
+div.card-header div.person-name, div.card-header div.person-job {
+	margin-left: 90px;
+	width: 130px;
+	color: #fff;
+	font-weight: bold;
+}
+
+div.card-main {
+	margin-top: 25px;
+}
+
+div.main-row {
+	background-color: #8BE3FF;
+	background-size: 10%;
+	background-repeat: no-repeat;
+	background-position: 95% 50%;
+	word-break: break-all;
+	white-space: normal;
+	font-size: 14px;
+	margin: 10px auto 10px;
+	padding: 10px;
+	padding-right: 30px;
+	border-radius: 5px;
+	width: 95%;
+
+	-webkit-box-shadow: 0px 2px 2px #9B9B9B;
+	-ms-box-shadow: 0px 2px 2px #9B9B9B;
+	-moz-box-shadow: 0px 2px 2px #9B9B9B;
+}
+
+div.main-row div.company-product-title {
+	padding-bottom: 2px;
+	margin-bottom: 5px;
+	border-bottom: solid 1px #fff;
+}
+
+div.card-main div.company-website-wrap {
+	background-image: url("/static/img/create/globe_icon.png");
+}
+
+div.card-main div.company-address {
+	background-image: url("/static/img/create/address_icon.png");
+	background-size: 9%;
+}
+
+div.card-main div.person-phone {
+	background-image: url("/static/img/create/phone_icon.png");
+}
+
+div.card-main div.person-email {
+	background-image: url("/static/img/create/email_icon.png");
+}
+
+div.card-main div.person-website-wrap {
+	background-image: url("/static/img/create/globe_icon.png");
+}
+
+div.info-type-tab {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	background: rgba(0,0,0,0.2);
+}
+
+div.info-type-tab > div {
+	width: 50%;
+	float: left;
+	padding: 5px;
+	text-align: center;
+	color: #333;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.clear-fix {
+	clear: both;
+}
+
+.hide {
+	display: none;
+}

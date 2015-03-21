@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="utf-8" />
+	<meta name="renderer" content="webkit" />
+	<title>网址 - {:L("common_app_name")}</title>
+	<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+	<link type="text/css" rel="stylesheet" href="/static/css/libs/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/common/global.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/create/common.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/create/url.css" />
+	<style>
+		.url-value {
+			font-weight: bold;
+		}
+		
+		.qr-preview-url {
+			position: absolute;
+			z-index: 1;
+			background: #fff;
+			width: 210px;
+			top: 127px;
+			color: #4A4A4A;
+			left: 49px;
+			font-size: 14px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<include file="Common:site_header" />
+	<include file="Create:step_common_top" />
+	<div class="container site-content">
+		<div class="col-lg-7">
+			<div class="form-group">
+				<label class="control-label" for="text-value">网址：</label> 
+				<if condition="$urlValue eq null">
+				<input type="text" class="form-control url-value" id="url-value" value="http://" />
+				<else />
+				<input type="text" class="form-control url-value" id="url-value" value="{$urlValue}" />
+				</if>
+			</div>
+		</div>
+		<div class="col-lg-4 col-lg-offset-1">
+			<div class="qr-preview">
+				<div class="qr-preview-url" id="qr-preview-url"></div>
+				<img class="phone-image"
+					src="/static/img/url/url_2.png" />
+			</div>
+		</div>
+	</div>
+	<include file="Create:step_common_bottom" />
+	<include file="Common:site_footer" />
+	<script type="text/javascript" src="/static/js/v1/create/url.js"></script>
+</body>
+</html>

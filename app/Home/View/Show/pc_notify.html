@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>温馨提示 - 酷多二维码</title>
+<link rel="stylesheet" type="text/css"
+	href="/static/css/libs/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/common/global.css">
+<link rel="stylesheet" type="text/css"
+	href="/static/css/v1/show/pcnotify.css">
+</head>
+<body>
+	<include file="Common:site_header" />
+	<div class="main-content">
+		<div class="container">
+			<div class="alert-box">
+				请使用 <strong class="text-danger">二维码扫描工具（微信等）</strong> 在手机端查看内容 
+				<a href="http://gdown.baidu.com/data/wisegame/bd111427856f7689/youshengerweima_1.apk" class="btn btn-info download-qr-btn">下载酷多二维码</a>
+			</div>
+			<div class="qr-image-wrap">
+				<img class="qr-image" src="{$qrcodeData['image']}" alt="{:L('common_app_name')}" />
+				<div class="bdsharebuttonbox">
+					<label class="share-label">分享到：</label> <a href="#"
+						class="bds_more" data-cmd="more"></a> <a href="#"
+						class="bds_weixin" data-cmd="weixin" title="分享到微信"></a> <a
+						href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a> <a
+						href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a> <a
+						href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+					<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a> <a
+						href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a> <a
+						href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a> <a
+						href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<include file="Common:site_footer" />
+	<script>
+        window._bd_share_config={
+            "common":{
+                "bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"
+             },
+            "share":{},"image":{
+                "viewList":["weixin","tsina","qzone","renren","tqq","sqq","tieba","douban"],"viewText":"分享到：","viewSize":"16"
+            },
+            "selectShare":{
+                "bdContainerClass":null,"bdSelectMiniList":["weixin","tsina","qzone","renren","tqq","sqq","tieba","douban"]
+            }
+        };
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</body>
+</html>

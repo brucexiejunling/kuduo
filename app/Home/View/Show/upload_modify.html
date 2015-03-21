@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>功能设置 - 有声二维码</title>
+<link rel="stylesheet" type="text/css" href="/static/css/v1/common.css?v=0.1">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/fix/common.css?v=0.1">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/fix/modify.css?v=0.1">
+</head>
+<body>
+	<div class="navbar-header app-navbar">
+		<div class="go-back" id="go-back"></div>
+		<span class="short-text">功能设置</span>
+		<!--div class="qr-preview" id="qr-preview">预览</div-->
+	</div>
+	<div class="container modify-content">
+		<div class="modify-config">
+			<div class="config-show">
+				<span class="config-label">添加密码</span>
+				<if condition="$_SESSION['lock_status'] eq 1"> <span
+					class="lock-question-switch on" id="lock-question-switch"></span> <else />
+				<span class="lock-question-switch" id="lock-question-switch"></span>
+				</if>
+			</div>
+			<div class="lock-question-wrap" id="lock-question-wrap">
+				<div class="config-title">
+					<input type="text" class="form-control lock-question"
+						placeholder="设置一个问题" id="lock-question"
+						value="{$_SESSION['lock_question']}">
+				</div>
+				<div class="config-answer">
+					<input type="text" class="form-control lock-answer"
+						placeholder="问题的答案" id="lock-answer"
+						value="{$_SESSION['lock_answer']}">
+				</div>
+				<div class="config-submit">
+					<span class="alert alert-red alert-sm lock-alert-box"
+						id="lock-alert-box">警告</span>
+					<div class="btn btn-red btn-sm lock-submit" id="lock-submit">确认</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn btn-blue qr-publish" id="qr-publish">发布</div>
+	</div>
+	<include file="Common:footer" />
+	<input type="hidden" id="short-url" value="{$_GET['q']}">
+	<input type="hidden" id="qr-type" value="{$_GET['type']}">
+	<script type="text/javascript" src="/static/js/libs/zepto.js"></script>
+	<script type="text/javascript" src="/static/js/v1/fix/modify.js"></script>
+</body>
+</html>

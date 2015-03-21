@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{:L("login_website_title")}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="renderer" content="webkit" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="用户登录 酷多二维码登陆 二维码登录 免费 二维码制作 二维码营销" />
+	<meta name="description" content="欢迎免费注册酷多二维码，酷多二维码_全国最好的一站式二维码服务平台。提供免费的二维码生成美化服务，为您的二维码营销保驾护航。" />
+	<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="/static/css/libs/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/common/global.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/login/login_pc.css">
+</head>
+<body>
+	<include file="Common:site_header" />
+	<div class="main-content">
+		<div class="container">
+			<form class="login-form">
+				<h4>{:L("login_form_title")}</h4>
+				<div class="form-group">
+					<input class="form-control user-account" id="user-account" type="text" placeholder="{:L('login_form_account_placeholder')}" />
+				</div>
+				<div class="form-group">
+					<input class="form-control user-password" id="user-password" type="password" placeholder="{:L('login_form_password_placeholder')}" />
+				</div>
+				<div class="alert alert-danger alert-sm login-alert-box"></div>
+				<div class="form-group get-login-box">
+					<span class="btn btn-info get-login" id="get-login">{:L("login_form_submit_btn")}</span>
+					<a class="go-register" href="/register?rel=login">{:L("login_form_register_label")}</a>
+					<a class="get-password-back" target="_blank" href="/user/forgetpassword">{:L("login_form_forgetpassword_label")}</a>
+					<div class="clearfix"></div>
+				</div>
+				<div class="form-group sns-login-wrap">
+					<label>{:L("login_form_open_sns_label")}</label>
+					<div class="sns-login-icon-wrap">
+						<a href="{$sina_url}" class="sina-login-icon"></a>
+						<!-- <a href="{$sina_url}" class="qq-login-icon"></a> -->
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<include file="Common:site_footer" />
+	<script type="text/javascript" src="/static/js/v1/login/login_1.js"></script>
+</body>
+</html>

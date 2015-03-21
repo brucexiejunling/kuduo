@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>酷多名片码 - 酷多二维码</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/common/mobile.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/show/common.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/v1/show/vcard.css">
+</head>
+<body>
+	<div class="navbar-header app-navbar" id="app-navbar">
+		<span class="short-text">酷多名片码</span>
+		<if condition="$_SESSION['uid'] eq null">
+			<div class="user-login" id="user-login">登录</div>
+		</if>
+	</div>
+	<div class="card-content">
+		<div class="company-info">
+			<div class="card-header">
+				<img src="{$cardValue.cardCover}" class="card-cover">
+				<span class="company-name">{$cardValue.companyName}</span>
+				<img src="{$cardValue.companyLogo}" class="company-logo">
+			</div>
+			<div class="card-main">
+				<div class="main-row company-website-wrap">
+					<a class="company-website" href="{$cardValue.companySite}">{$cardValue.companySite}</a>
+				</div>
+				<div class="main-row company-address">{$cardValue.companyAddress}</div>
+				<div class="main-row company-product-wrap">
+					<div class="company-product-title">产品/服务</div>
+					<div class="company-product">{$cardValue.productInfo}</div>
+				</div>
+			</div>
+		</div>
+		<div class="personal-info">
+			<div class="card-header">
+				<img src="/static/img/create/default_person_avatar.png" class="person-avatar">
+				<div class="person-name">{$cardValue.personName}</div>
+				<div class="person-job">{$cardValue.personJob}</div>
+			</div>
+			<div class="card-main">
+				<div class="main-row person-phone">{$cardValue.personPhone}</div>
+				<div class="main-row person-email">{$cardValue.personEmail}</div>
+				<div class="main-row person-website-wrap">
+					<a class="person-website" href="{$cardValue.personSite}">{$cardValue.personSite}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<include file="Common:footer" />
+	<script type="text/javascript">
+		$(function() {
+			$("#user-login").click(function() {
+		    var localPage = location.href;
+		    location.href = "http://ikuduo.com/login?continue=" + encodeURIComponent(localPage) + "&rel=text";
+		  });
+		});
+	</script>
+</body>
+</html>

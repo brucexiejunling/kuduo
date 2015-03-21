@@ -1,0 +1,147 @@
+body {
+	background: #fff;
+}
+
+.app-navbar {
+	position: relative;
+	height: 44px;
+	border-bottom: 1px solid #E5E5E5;
+	background: #fff;
+	text-align: center;
+	width: 100%;
+}
+
+.app-navbar .short-text {
+	display: inline-block;
+	*display: block;
+	font-size: 18px;
+	margin-top: 10px;
+	max-width: 180px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.register-form-phone, .register-form-mail {
+	padding: 10px 0;
+	margin: 40px auto 0;
+	width: 300px;
+}
+
+.register-form-mail {
+	display: none;
+}
+
+.register-method {
+	color: #B9BCBD;
+	padding: 3px 12px;
+	width: 270px;
+	font-size: 16px;
+	border-bottom: 1px solid #DDD;
+	margin-left: 10px;
+}
+
+.go-back {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	background: url(/static/img/back.png) no-repeat 0px 0px;
+	background-size: 16px;
+	width: 30px;
+	height: 30px;
+}
+
+.register-method.focused {
+	border-bottom: 2px solid #CA0303;
+	color: #5A5959;
+}
+
+.phone-number, .user-password, .email-input, .user-password-mail {
+	display: block;
+	margin: 20px auto 0;
+	width: 240px;
+	padding-left: 35px;
+}
+
+.phone-number {
+	background: url(/static/img/mobile_sprite_icons.png) 4px -81px no-repeat;
+}
+
+.phone-number:focus {
+	background: url(/static/img/mobile_sprite_icons.png) 4px -124px no-repeat;
+	border: 1px solid #4DAAFF;
+}
+
+.user-password, .user-password-mail {
+	background: url(/static/img/mobile_sprite_icons.png) 4px 0px no-repeat;
+}
+
+.user-password:focus, .user-password-mail:focus {
+	background: url(/static/img/mobile_sprite_icons.png) 4px -36px no-repeat;
+	border: 1px solid #4DAAFF;
+}
+
+.email-input {
+	background: url(/static/img/mobile_sprite_icons.png) 4px -81px no-repeat;
+}
+
+.email-input:focus {
+	background: url(/static/img/mobile_sprite_icons.png) 4px -124px no-repeat;
+	border: 1px solid #4DAAFF;
+}
+
+.send-phone-code {
+	display: block;
+	float: left;
+	margin-left: 10px;
+	padding: 11px 15px;
+	text-align: center;
+	font-size: 80%;
+	border-radius: 5px;
+}
+
+.phone-code {
+	display: block;
+	float: left;
+	width: 80px;
+	margin-left: 10px;
+}
+
+.verify-code {
+	display: inline-block;
+	float: left;
+	margin-left: 10px;
+	width: 60px;
+}
+
+.verify-code-image {
+	width: 80px;
+	display: inline-block;
+	float: left;
+	height: 38px;
+	margin-left: 5px;
+}
+
+.verify-code-link {
+	float: left;
+	display: block;
+	margin-top: 20px;
+	font-size: 12px;
+	margin-left: 5px;	
+}
+
+.register-next-box {
+	margin-top: 25px;
+}
+
+.register-next {
+	display: block;
+	width: 250px;
+	margin: 0 auto;
+	padding: 10px 14px;
+}
+
+.register-alert-box {
+	width: 270px;
+	margin: 0 auto;
+}

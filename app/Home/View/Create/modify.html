@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="utf-8" />
+	<meta name="renderer" content="webkit" />
+	<title>美化生成 - {:L("common_app_name")}</title>
+	<link rel="shortcut icon" type="image/x-icon"  href="/static/img/favicon.ico" />
+	<link type="text/css" rel="stylesheet"	href="/static/css/libs/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/common/global.css" />
+	<link type="text/css" rel="stylesheet" href="/static/css/v1/create/modify.css" />
+	<link type="text/css" rel="stylesheet"	href="/static/js/libs/jqcrop/css/jquery.Jcrop.css" />
+	<link type="text/css" rel="stylesheet" href="/static/js/libs/jquery.color/jquery.color.css" />
+</head>
+<body>
+	<include file="Common:site_header" />
+	<div class="qr-modify-bar">
+		<div class="container">
+			<div class="qrcode-step">
+				<div class="step">1. 选择二维码类型</div>
+				<div class="step">2. 编辑二维码内容</div>
+				<div class="step current-step">3. 美化生成二维码</div>
+			</div>
+			<div class="col-lg-12">
+				<div class="qr-edit-title clearfix">
+					<img src="/static/img/modify_title.png" class="qrcode-edit-image" />
+					<span class="btn btn-danger btn-lg btn-complete pull-right"
+						id="btn-complete">完成</span> <span
+						class="btn btn-info btn-lg btn-preview pull-right"
+						id="btn-preview">预览</span> 
+					<a href="/create/{$_SESSION['tmp_qrcode_type']}?rel=modify" class="btn btn-white btn-lg btn-go-back pull-right" id="btn-go-back">返回</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container modify-content">
+		<div class="col-lg-4 modify-content-siderbar">
+			<div class="modify-edit-item-side">
+				<div class="modify-item-title active" data-id="basic">基本</div>
+				<div class="modify-item-title" data-id="insert">嵌入</div>
+				<div class="modify-item-title" data-id="codeeye">码眼</div>
+				<div class="modify-item-title" data-id="effect">效果</div>
+			</div>
+			<div class="modify-edit-detail-side">
+				<div class="setting-item clearfix" data-bind="basic"  data-for="trandition enhance">
+					<strong class="item-title">模式</strong>
+					<span class="qrcode-render-type" render="normal">传统模式</span>
+					<span class="qrcode-render-type selected" render="enhance">增强模式</span>
+				</div>
+				<div class="setting-item clearfix" data-bind="basic"  data-for="trandition enhance">
+					<strong class="item-title">背景</strong>
+					<div class="item-content">
+						<div id="bg-color-select" title="二维码背景" class="bg-color-select">
+							<span style="display: inline-block; background: rgb(255, 255, 255); width: 30px; height: 30px"></span>
+						</div>
+						<div class="btn btn-sm btn-white bg-image-upload">
+							<div class="bg-image-upload-label">本地上传</div>
+							<div class="bg-image-uploading"><img src="/static/img/loading.gif">上传中...</div>
+							<input type="file" id="bg-image-src" name="bg-image-src" class="bg-image-src" />
+						</div>
+						<!-- <div class="select-from-image-library" id="select-from-image-library" title="从图库选择">图库</div> -->
+						<div class="bg-image-reset" id="bg-image-reset" title="重置"></div>
+					</div>
+					
+				</div>
+				<div class="setting-item clearfix" data-bind="basic"  data-for="trandition enhance">
+					<strong class="item-title">前景</strong>
+					<div class="item-content">
+						<div id="front-color-select" class="front-color-select">
+							<span style="display: inline-block; background: rgb(0, 0, 0); width: 30px; height: 30px"></span>
+						</div>
+					</div>
+				</div>
+				<div class="setting-item clearfix" data-bind="codeeye"  data-for="trandition enhance">
+					<strong class="item-title">码眼形状</strong>
+					<div class="item-content">
+						<div class="code-eye-list">
+							<div class="code-eye-type-item code-eye-rounded">rounded</div>
+							<div class="code-eye-type-item code-eye-square">square</div>
+						</div>
+					</div>
+				</div>
+				<div class="setting-item clearfix" data-bind="codeeye"  data-for="enhance">
+					<strong class="item-title">码眼颜色</strong>
+					<div class="item-content">
+						<div id="code-eye-color-select" class="code-eye-color-select" title="码眼的颜色">
+							<span style="display: inline-block;background: #000; width: 25px; height: 25px"></span>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="setting-item clearfix" data-bind="codeeye"  data-for="enhance">
+					<strong class="item-title">内点形状</strong>
+					<div class="item-content">
+						<div class="dot-fill-list">
+							<div class="dot-fill-type-item dot-fill-circle">rounded</div>
+							<div class="dot-fill-type-item code-eye-square">square</div>
+						</div>
+					</div>
+				</div> -->
+				<div class="setting-item clearfix" data-bind="insert"  data-for="trandition enhance">
+					<strong class="item-title">Logo</strong>
+					<div class="item-content">
+						<div class="logo-upload-wrap btn btn-white">
+							<div class="logo-upload-label">本地上传</div>
+							<div class="logo-uploading"><img src="/static/img/loading.gif">上传中...</div>
+							<input type="file" id="logo-upload-src" name="logo-upload-src" class="logo-upload-src" />			
+						</div>
+						<div class="logo-upload-reset" id="logo-upload-reset" title="重置"></div>
+					</div>
+				</div>
+				<div class="setting-item clearfix" data-bind="insert">
+					<strong class="item-title">文字</strong>
+					<div class="item-content">
+						<input type="text" placeholder="输入文字..." class="form-control qrcode-text-insert" id="qrcode-text-insert" />
+					</div>
+				</div>
+				<div class="setting-item clearfix" data-bind="insert"  data-for="trandition enhance">
+					<strong class="item-title">样式</strong>
+					<div class="item-content">
+						<div class="text-insert-font-color" title="文字颜色">
+							<span style="display: inline-block; background: rgb(0, 0, 0); width: 30px; height: 30px"></span>
+						</div>
+						<!-- div class="text-insert-background-color" title="背景颜色">
+							<span style="display: inline-block; background: rgb(255, 255, 255); width: 30px; height: 30px"></span>
+						</div-->
+						<div class="text-insert-font-style" title="加粗"></div>
+					</div>
+				</div>
+
+				<div class="setting-item clearfix" data-bind="insert"  data-for="trandition enhance">
+					<strong class="item-title">字号</strong>
+					<div class="item-content">
+						<select class="text-insert-font-size" title="字号">
+							<option value="12">12px</option>
+							<option value="13">13px</option>
+							<option value="14" selected>14px</option>
+							<option value="16">16px</option>
+							<option value="18">18px</option>
+							<option value="20">20px</option>
+							<option value="24">24px</option>
+						</select>
+						
+					</div>
+				</div>
+				<!-- <div class="setting-item clearfix" data-bind="insert">
+					<strong class="item-title">字体</strong>
+					<div class="item-content">
+						<select class="text-insert-font-family">
+							<option>冬青黑体</option>
+						</select>
+					</div>
+				</div> -->
+				
+				<div class="setting-item clearfix" data-bind="basic"  data-for="trandition enhance">
+					<strong class="item-title">边距</strong>
+					<div class="item-content">
+						<select class="qrcode-margin" id="qrcode-margin">
+							<option value="0">0</option>
+							<option value="1" selected="true" >1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+						</select>
+					</div>
+				</div>
+				<div class="setting-item clearfix" data-bind="basic"  data-for="trandition enhance">
+					<strong class="item-title">容错率</strong>
+					<div class="item-content">
+						<div class="qrcode-error-level">
+							<label><input type="radio" name="error-level" value="L"/>7%</label>
+							<label class="selected"><input type="radio" name="error-level" value="M"/>15%</label>
+							<label><input type="radio" name="error-level" value="Q"/>25%</label>
+							<label><input type="radio" name="error-level" value="H"/>30%</label>
+						</div>
+					</div>
+				</div>
+				<div class="setting-item clearfix" data-bind="effect" data-for="trandition">
+					<strong class="item-title">渐变颜色</strong>
+					<div class="item-content">
+						<div id="gradient-color" title="渐变颜色" class="gradient-color">
+							<span style="display: inline-block; background: rgb(0, 0, 0); width: 30px; height: 30px"></span>
+						</div>
+					</div>
+				</div>
+				<div class="setting-item clearfix" data-bind="effect">
+					<strong class="item-title">渐变方向</strong>
+					<div class="item-content">
+						<select class="gradient-direction" id="gradient-direction">
+							<option value="center">中心渐变</option>
+							<option value="slash">斜线渐变</option>
+							<option value="back-slash">反斜线渐变</option>
+							<option value="vertical">垂直渐变</option>
+							<option value="horizontal">水平渐变</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-7 col-lg-offset-1 upload-image-wrap"
+			id="upload-image-wrap">
+			<img id="render-content" class="render-content" src="/static/img/default_bg_1.png" />
+			<span class="qrcode-text-insert-preview" id="qrcode-text-insert-preview"></span>
+			<img id="logo-image-preview" class="logo-image-preview"/>
+			<img id="image-preview-mask" class="image-preview-mask" />
+			<div class="loading-mask">
+				<div class="loading-wrap">
+					<img src="/static/img/indicator_circle_thickbox.gif" />
+					<span class="loadding-text">正在生成...</span>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 	<div class="image-store-mask" id="image-store-mask">
+		<div class="image-store-wrap">
+			<img src="/static/img/btn_close.png" class="close-btn"/>
+			<h3 class="image-store-title">选择二维码背景图</h3>
+			<div class="image-store-list" id="image-store-list">
+		
+			</div>
+		</div>
+	</div> -->
+	<div class="create-login-mask">
+		<div class="create-login-wrap">
+			<div class="close-btn">×</div>
+			<div class="create-login-content">
+				<div class="login-title">登录酷多二维码</div>
+
+				<div class="form-group">
+					<input class="form-control" type="text" id="user-account"  placeholder="邮箱或手机号码" />
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="password" id="user-password" placeholder="密码" />
+				</div>
+				<div class="alert alert-danger alert-box"></div>
+				<div class="form-group">
+					<span class="btn btn-primary create-login-btn" id="create-login-btn">立即登录</span>
+				</div>
+				<div class="form-group new-user-register">
+					<a href="/register?rel=modify" target="_blank" class="new-user-register-btn">新用户注册</a>
+					<a href="/user/forgetpassword" target="_blank" class="forget-password-btn">忘记密码？</a>
+					<div class="clearfix"></div>
+				</div>
+				<div class="form-group social-btn">
+					<a href="javascript:void(0)" social-link='{$sina_url}' class="social-weibo-btn"><i class="social-sprites-icon weibo-btn"></i>微博登陆</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<include file="Common:site_footer" />
+	<script type="text/javascript" src="/static/js/v1/create/dragAndResize.js"></script>
+	<script type="text/javascript" src="/static/js/libs/jqcrop/js/jquery.Jcrop.js"></script>
+	<script type="text/javascript" src="/static/js/libs/jquery.color/jquery.color.js"></script>
+	<script type="text/javascript" src="/static/js/libs/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="/static/js/libs/jquery.slider/jquery.slider-1.0.0.js"></script>
+	<script type="text/javascript" src="/static/js/v1/create/modify.js?v=20141011"></script>
+</body>
+</html>

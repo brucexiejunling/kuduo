@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>酷多文字码 - 酷多二维码</title>
+<link rel="stylesheet" type="text/css" href="/static/css/v1/common/mobile.css">
+<link rel="stylesheet" type="text/css" href="/static/css/v1/show/common.css">
+<style>
+	.text-content {
+		padding: 30px 20px;
+		margin: 0 auto;
+		font-size: 16px;
+		word-break: break-all;
+		background: #fff;
+	}
+</style>
+</head>
+<body>
+	<div class="navbar-header app-navbar" id="app-navbar">
+		<span class="short-text">文本</span>
+		<if condition="$_SESSION['uid'] eq null">
+			<div class="user-login" id="user-login">登录</div>
+		</if>
+	</div>
+	<div class="text-content">{$text}</div>
+	<include file="Common:footer" />
+</body>
+</html>
